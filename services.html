@@ -119,6 +119,551 @@
             <a href="index.html" class="flex items-center gap-3 group">
                 <img src="nda golden logo.png" alt="NDA Logo"
                     class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
+
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="index.html#home"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">HOME</a>
+                <a href="about.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">ABOUT</a>
+                <a href="services.html"
+                    class="text-sm font-medium text-white tracking-widest hover:text-gold-400 transition-colors duration-300">SERVICES</a>
+                <a href="projects.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">PROJECTS</a>
+                <a href="resources.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">RESOURCES</a>
+                <a href="contact.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">CONTACT</a>
+            </nav>
+
+            <!-- CTA Trigger -->
+            <div class="hidden md:block">
+                <a href="contact.html"
+                    class="inline-flex items-center justify-center px-6 py-3 border border-gold-400/30 text-gold-400 hover:text-obsidian hover:bg-gold-400 text-xs font-semibold tracking-widest rounded transition-all duration-300">
+                    GET A QUOTE
+                </a>
+            </div>
+
+            <!-- Mobile Menu Trigger -->
+            <button id="mobile-menu-btn" class="md:hidden text-white hover:text-gold-400 transition-colors"
+                aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 bg-obsidian-950 z-40 flex flex-col justify-center items-center gap-8 text-center transition-all duration-500">
+            <button id="mobile-menu-close"
+                class="absolute top-8 right-6 text-white hover:text-gold-400 transition-colors">
+                <i class="fa-solid fa-xmark text-3xl"></i>
+            </button>
+            <a href="index.html#home"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Home</a>
+            <a href="about.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">About</a>
+            <a href="services.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Services</a>
+            <a href="projects.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Projects</a>
+            <a href="resources.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Resources</a>
+            <a href="contact.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Contact</a>
+            <a href="contact.html"
+                class="mt-4 inline-flex items-center justify-center px-8 py-4 bg-gold-400 text-obsidian font-bold tracking-widest text-sm rounded hover:bg-gold-550 transition-colors">
+                GET A QUOTE
+            </a>
+        </div>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="relative w-full h-[60vh] min-h-[400px] flex items-center bg-obsidian-950 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-cover bg-center opacity-30 scale-105"
+                style="background-image: url('cranebackground.avif');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 text-center">
+            <span class="text-xs font-semibold tracking-[0.3em] text-gold-400 uppercase block mb-4">WHAT WE BUILD</span>
+            <h1
+                class="font-display text-3xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-none">
+                Our Core
+                Services</h1>
+            <p class="mt-6 text-slate-400 text-sm max-w-lg mx-auto leading-relaxed">
+                Turnkey civil engineering, detailed architectural consultations, heavy load design, and site
+                landscaping.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Grid Layout (Alternating Columns in Tailwind CSS) -->
+    <section class="py-24 bg-obsidian space-y-32">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Service 1: Residential Construction -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-4 border border-gold-400/20 rounded-lg pointer-events-none transform -translate-x-4 -translate-y-4">
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="slide3 home.png" alt="Residential Construction Layout"
+                            class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 text-gold-400">
+                        <span class="text-xs font-bold tracking-widest uppercase">01 / VERTICALS</span>
+                        <div class="w-8 h-[1px] bg-gold-400"></div>
+                    </div>
+                    <h3 class="font-display text-3xl font-bold text-white">Residential Estates</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        We design and execute custom residential spaces, including multi-story apartments, independent
+                        villas, and gated urban communities. Our work focuses on optimal spatial planning, premium raw
+                        material procurement, and robust concrete structures.
+                    </p>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> High-Rise
+                            CGHS Apartment Blocks</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Independent
+                            Luxury Builder Floors</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Premium
+                            Gated Housing Infrastructures</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 2: Industrial Complex Development -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center pt-32 lg:pt-40">
+                <div class="lg:order-2 relative group">
+                    <div
+                        class="absolute -inset-4 border border-gold-400/20 rounded-lg pointer-events-none transform translate-x-4 translate-y-4">
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="Tex India Industrial Building.png" alt="Industrial Building Concrete Foundations"
+                            class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+                <div class="lg:order-1 space-y-6">
+                    <div class="flex items-center gap-4 text-gold-400">
+                        <span class="text-xs font-bold tracking-widest uppercase">02 / VERTICALS</span>
+                        <div class="w-8 h-[1px] bg-gold-400"></div>
+                    </div>
+                    <h3 class="font-display text-3xl font-bold text-white">Industrial Complexes</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        We build highly functional, heavy-duty industrial developments, covering factory setups,
+                        logistic hubs, cold storage spaces, and modern warehouse layouts with PEB (Pre-engineered
+                        Building) steel structures.
+                    </p>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> High Load
+                            Machine Foundation Casting</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> PEB Steel
+                            Structural Framing & Layouts</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Automated
+                            Logistic Hub Warehouses</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 3: Hospital & Healthcare -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center pt-32 lg:pt-40">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-4 border border-gold-400/20 rounded-lg pointer-events-none transform -translate-x-4 -translate-y-4">
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="fortis.jpg" alt="Medical Infrastructure Fortis"
+                            class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 text-gold-400">
+                        <span class="text-xs font-bold tracking-widest uppercase">03 / VERTICALS</span>
+                        <div class="w-8 h-[1px] bg-gold-400"></div>
+                    </div>
+                    <h3 class="font-display text-3xl font-bold text-white">Healthcare Infrastructure</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Execution of complex multi-specialty hospital infrastructure. Our planning incorporates advanced
+                        medical machinery requirements, clean interior air flow layouts, chemical waste channeling, and
+                        strict safety codes.
+                    </p>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> ICU &
+                            Specialized Surgical Ward Layouts</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Complex
+                            Waste Management System Plumbing</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i>
+                            Vibration-Isolated Medical Equipment Castings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 4: Educational Institutions -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center pt-32 lg:pt-40">
+                <div class="lg:order-2 relative group">
+                    <div
+                        class="absolute -inset-4 border border-gold-400/20 rounded-lg pointer-events-none transform translate-x-4 translate-y-4">
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="dctm-college-palwal.avif" alt="College Campus Palwal"
+                            class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+                <div class="lg:order-1 space-y-6">
+                    <div class="flex items-center gap-4 text-gold-400">
+                        <span class="text-xs font-bold tracking-widest uppercase">04 / VERTICALS</span>
+                        <div class="w-8 h-[1px] bg-gold-400"></div>
+                    </div>
+                    <h3 class="font-display text-3xl font-bold text-white">Educational Campuses</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Delivering university campuses, school administrative blocks, technical laboratories, and
+                        academic blocks designed for learning and development. Built with highly durable,
+                        low-maintenance structural engineering.
+                    </p>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Heavy Duty
+                            Administration Blocks</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Lecture
+                            Theaters & Indoor Sports Halls</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Student
+                            Housing Dormitory Structures</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 5: Commercial Developments -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center pt-32 lg:pt-40">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-4 border border-gold-400/20 rounded-lg pointer-events-none transform -translate-x-4 -translate-y-4">
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="Hotel Rosewood Retreat .png" alt="Commercial Luxury Resorts"
+                            class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 text-gold-400">
+                        <span class="text-xs font-bold tracking-widest uppercase">05 / VERTICALS</span>
+                        <div class="w-8 h-[1px] bg-gold-400"></div>
+                    </div>
+                    <h3 class="font-display text-3xl font-bold text-white">Commercial &amp; Retail</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Redefining retail malls, corporate office blocks, and luxury resorts. We provide a balance of
+                        contemporary glass elevations, high-end interiors, energy-efficient building layout plans, and
+                        reliable MEP setups.
+                    </p>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Corporate
+                            Office Towers &amp; IT Parks</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Premium
+                            Hospitality Hotels &amp; Resorts</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Commercial
+                            Showrooms &amp; Retail Arcades</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 6: External Landscaping -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center pt-32 lg:pt-40">
+                <div class="lg:order-2 relative group">
+                    <div
+                        class="absolute -inset-4 border border-gold-400/20 rounded-lg pointer-events-none transform translate-x-4 translate-y-4">
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="external layouts.png" alt="Roadworks and External Site Development"
+                            class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+                <div class="lg:order-1 space-y-6">
+                    <div class="flex items-center gap-4 text-gold-400">
+                        <span class="text-xs font-bold tracking-widest uppercase">06 / VERTICALS</span>
+                        <div class="w-8 h-[1px] bg-gold-400"></div>
+                    </div>
+                    <h3 class="font-display text-3xl font-bold text-white">External Layouts &amp; Roads</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Turnkey site preparation and landscaping. We design drainage networks, internal concrete road
+                        pavements, decorative landscaping features, water conservation blocks, and site utility
+                        connections.
+                    </p>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Concrete
+                            Road Pavement Laying</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Integrated
+                            Rainwater Harvesting Wells</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Heavy Duty
+                            Utility Substation Castings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 7: Buildup Floors & Builder Estates -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center pt-32 lg:pt-40 border-t border-white/5 mt-32">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-4 border border-gold-400/20 rounded-lg pointer-events-none transform -translate-x-4 -translate-y-4">
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="kanishka_residency.png" alt="Buildup Floors 578 Kanishka Residency"
+                            class="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 text-gold-400">
+                        <span class="text-xs font-bold tracking-widest uppercase">07 / VERTICALS</span>
+                        <div class="w-8 h-[1px] bg-gold-400"></div>
+                    </div>
+                    <h3 class="font-display text-3xl font-bold text-white">Buildup Floors &amp; Builder Estates</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Turnkey construction of high-end independent builder floors and multi-tier floor buildups (Stilt
+                        + 4 Floors / Basement + G + 3). We execute precision RCC slab casting, custom floor layouts,
+                        independent MEP stacks, and contemporary facade finishes.
+                    </p>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> High-Grade
+                            RCC Raft Footings &amp; Column Frames</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Stilt
+                            Parking Level &amp; Reinforced Elevator Cores</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Independent
+                            MEP Plumbing, Electric &amp; HVAC Isolation</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-400"></i> Premium
+                            Exterior Stone Cladding &amp; Balcony Glass Rails</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Global Premium Footer -->
+    <footer class="bg-obsidian-950 border-t border-white/[0.05] py-16 text-xs text-slate-400">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 mb-12">
+            <!-- Logo area -->
+            <div class="md:col-span-5 space-y-6">
+                <div class="flex items-center gap-3">
+                    <img src="nda golden logo.png" alt="NDA Logo" class="h-10 w-auto object-contain">
+                    <div class="flex flex-col">
+                        <span class="font-display font-bold text-white tracking-widest text-sm leading-none">NEST
+                            DEVELOPERS</span>
+                        <span
+                            class="font-display font-medium text-[8px] text-gold-400 tracking-[0.25em] mt-1">ARCHITECTS</span>
+                    </div>
+                </div>
+                <p class="leading-relaxed max-w-sm text-slate-400 text-xs">
+                    Since 2015, translating complex structures into landmarks across India. Registered in Faridabad,
+                    built on reliability and safety.
+                </p>
+                <div class="flex gap-4 text-base">
+                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Page Quicklinks -->
+            <div class="md:col-span-3 space-y-4">
+                <h5 class="font-display text-white font-bold tracking-widest uppercase">Quick Links</h5>
+                <ul class="space-y-3">
+                    <li><a href="index.html#home" class="hover:text-gold-400 transition-colors">Home Page</a></li>
+                    <li><a href="about.html" class="hover:text-gold-400 transition-colors">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-gold-400 transition-colors">Core Services</a></li>
+                    <li><a href="projects.html" class="hover:text-gold-400 transition-colors">Portfolio</a></li>
+                    <li><a href="resources.html" class="hover:text-gold-400 transition-colors">Resources &amp;
+                            Machinery</a></li>
+                    <li><a href="contact.html" class="hover:text-gold-400 transition-colors">Contact Panel</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Verticals -->
+            <div class="md:col-span-4 space-y-4">
+                <h5 class="font-display text-white font-bold tracking-widest uppercase">Our Competency</h5>
+                <ul class="space-y-3">
+                    <li><span class="text-slate-400">Civil &amp; Concrete Foundations</span></li>
+                    <li><span class="text-slate-400">Industrial Warehouse Laying</span></li>
+                    <li><span class="text-slate-400">Modern Architecture &amp; Interiors</span></li>
+                    <li><span class="text-slate-400">External Landscaping &amp; Roads</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Rights -->
+        <div
+            class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/[0.05] flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500">
+            <span>&copy; 2026 Nest Developers &amp; Architects. All Rights Reserved.</span>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-gold-400 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-gold-400 transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script Operations -->
+    <script>
+        // Header Scroll Effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('glassmorphic', 'py-4');
+                header.classList.remove('py-6', 'border-transparent');
+            } else {
+                header.classList.remove('glassmorphic', 'py-4');
+                header.classList.add('py-6', 'border-transparent');
+            }
+        });
+
+        // Mobile Menu Toggling
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+
+        mobileClose.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+    </script>
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Nest Developers & Architects</title>
+
+    <meta name="description"
+        content="Discover our structural capabilities. From turnkey industrial warehouse setups to premium residential housing, commercial spaces, and complex medical foundations.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nestdevelopers.in/services.html">
+
+    <!-- Tailwind CSS and FontAwesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap');
+    </style>
+
+    <!-- Tailwind Theme Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: {
+                            DEFAULT: '#080b11',
+                            50: '#f5f7fa',
+                            100: '#eaeef4',
+                            200: '#cbd5e2',
+                            300: '#9cb0cb',
+                            400: '#6886ae',
+                            500: '#476793',
+                            600: '#375076',
+                            700: '#2e4162',
+                            800: '#1b263b',
+                            900: '#0f172a',
+                            950: '#080b11',
+                        },
+                        gold: {
+                            DEFAULT: '#c5a880',
+                            50: '#fbf9f6',
+                            100: '#f5efe6',
+                            200: '#ebdcc5',
+                            300: '#dbc39d',
+                            400: '#c5a880', // Champagne Gold
+                            550: '#b0926a',
+                            600: '#9d7f57',
+                            700: '#7e6341',
+                            800: '#604a30',
+                            900: '#433320',
+                            950: '#22180e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Utility styles -->
+    <style>
+        .text-glow {
+            text-shadow: 0 0 20px rgba(197, 168, 128, 0.2);
+        }
+
+        .glassmorphic {
+            background-color: rgba(8, 11, 17, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(197, 168, 128, 0.2);
+        }
+
+        /* Smooth Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #080b11;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c5a880;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b0926a;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-obsidian text-slate-300 antialiased overflow-x-hidden">
+
+    <!-- Header / Navbar -->
+    <header id="main-header"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="nda golden logo.png" alt="NDA Logo"
+                    class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
                 <div class="flex flex-col">
                     <span class="font-display font-bold text-lg text-white tracking-widest leading-none">NEST
                         DEVELOPERS</span>
