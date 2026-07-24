@@ -119,6 +119,567 @@
             <a href="index.html" class="flex items-center gap-3 group">
                 <img src="nda golden logo.png" alt="NDA Logo"
                     class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
+
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="index.html#home"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">HOME</a>
+                <a href="about.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">ABOUT</a>
+                <a href="services.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">SERVICES</a>
+                <a href="projects.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">PROJECTS</a>
+                <a href="resources.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">RESOURCES</a>
+                <a href="contact.html"
+                    class="text-sm font-medium text-white tracking-widest hover:text-gold-400 transition-colors duration-300">CONTACT</a>
+            </nav>
+
+            <!-- CTA Trigger -->
+            <div class="hidden md:block">
+                <a href="#contact-section"
+                    class="inline-flex items-center justify-center px-6 py-3 border border-gold-400/30 text-gold-400 hover:text-obsidian hover:bg-gold-400 text-xs font-semibold tracking-widest rounded transition-all duration-300">
+                    GET A QUOTE
+                </a>
+            </div>
+
+            <!-- Mobile Menu Trigger -->
+            <button id="mobile-menu-btn" class="md:hidden text-white hover:text-gold-400 transition-colors"
+                aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 bg-obsidian-950 z-40 flex flex-col justify-center items-center gap-8 text-center transition-all duration-500">
+            <button id="mobile-menu-close"
+                class="absolute top-8 right-6 text-white hover:text-gold-400 transition-colors">
+                <i class="fa-solid fa-xmark text-3xl"></i>
+            </button>
+            <a href="index.html#home"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Home</a>
+            <a href="about.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">About</a>
+            <a href="services.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Services</a>
+            <a href="projects.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Projects</a>
+            <a href="resources.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Resources</a>
+            <a href="contact.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Contact</a>
+            <a href="#contact-section"
+                class="mt-4 inline-flex items-center justify-center px-8 py-4 bg-gold-400 text-obsidian font-bold tracking-widest text-sm rounded hover:bg-gold-550 transition-colors">
+                GET A QUOTE
+            </a>
+        </div>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="relative w-full h-[50vh] min-h-[350px] flex items-center bg-obsidian-950 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-cover bg-center opacity-30 scale-105"
+                style="background-image: url('building bg.png');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 text-center">
+            <span class="text-xs font-semibold tracking-[0.3em] text-gold-400 uppercase block mb-4">GET IN TOUCH</span>
+            <h1
+                class="font-display text-3xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-none">
+                Contact
+                Us</h1>
+            <p class="mt-6 text-slate-400 text-sm max-w-lg mx-auto leading-relaxed">
+                Connect with our technical and management team to translate your project blueprints into architectural
+                legacies.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact-section" class="py-24 bg-obsidian relative overflow-hidden">
+        <!-- Subtle background asset -->
+        <div class="absolute right-0 bottom-0 opacity-[0.02] pointer-events-none w-1/4">
+            <img src="white nda feather.png" alt="NDA Leaf Logo">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-16 items-start">
+
+                <!-- Left Details Column -->
+                <div class="lg:col-span-5 space-y-10">
+                    <div>
+                        <span
+                            class="text-xs font-semibold tracking-[0.25em] text-gold-400 uppercase block mb-3">INQUIRIES</span>
+                        <h2 class="font-display text-4xl font-bold text-white tracking-tight leading-tight">Partner with
+                            Us on Your Next Milestone</h2>
+                        <p class="text-slate-400 text-xs leading-relaxed mt-4">
+                            Submit your project details to our technical team for review. Let us translate your
+                            blueprint into structural legacy.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Working Office -->
+                        <div class="flex items-start gap-5">
+                            <div
+                                class="w-10 h-10 rounded bg-white/[0.02] border border-white/10 flex items-center justify-center text-gold-400 text-lg flex-shrink-0">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-slate-400 uppercase tracking-widest">Working
+                                    Office</span>
+                                <span class="block text-white text-sm font-medium mt-1 leading-relaxed">20/6, Nepco
+                                    Compound, Sector - 5, Mathura Road, Faridabad (Haryana)</span>
+                            </div>
+                        </div>
+
+                        <!-- Registered Office -->
+                        <div class="flex items-start gap-5">
+                            <div
+                                class="w-10 h-10 rounded bg-white/[0.02] border border-white/10 flex items-center justify-center text-gold-400 text-lg flex-shrink-0">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-slate-400 uppercase tracking-widest">Registered
+                                    Office</span>
+                                <span class="block text-white text-sm font-medium mt-1 leading-relaxed">Booth #65, Huda
+                                    Market, Sec – 20A, Faridabad – 121002</span>
+                            </div>
+                        </div>
+
+                        <!-- Direct Contact Numbers -->
+                        <div class="flex items-start gap-5">
+                            <div
+                                class="w-10 h-10 rounded bg-white/[0.02] border border-white/10 flex items-center justify-center text-gold-400 text-lg flex-shrink-0">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-slate-400 uppercase tracking-widest">Direct
+                                    Contact</span>
+                                <span class="block text-white text-sm font-medium mt-1">
+                                    Raj Singh Tewatia: <a href="tel:+919811344430"
+                                        class="hover:text-gold-400 transition-colors">+91 98113 44430</a>
+                                </span>
+                                <span class="block text-white text-sm font-medium mt-1">
+                                    Sandeep Tewatia: <a href="tel:+919999779422"
+                                        class="hover:text-gold-400 transition-colors">+91 99997 79422</a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start gap-5">
+                            <div
+                                class="w-10 h-10 rounded bg-white/[0.02] border border-white/10 flex items-center justify-center text-gold-400 text-lg flex-shrink-0">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-slate-400 uppercase tracking-widest">E-Mail
+                                    Address</span>
+                                <span class="block text-white text-sm font-medium mt-1">
+                                    <a href="mailto:nest.arch15@gmail.com"
+                                        class="hover:text-gold-400 transition-colors">nest.arch15@gmail.com</a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- GSTIN -->
+                        <div class="flex items-start gap-5">
+                            <div
+                                class="w-10 h-10 rounded bg-white/[0.02] border border-white/10 flex items-center justify-center text-gold-400 text-lg flex-shrink-0">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-slate-400 uppercase tracking-widest">GSTIN</span>
+                                <span
+                                    class="block text-white text-sm font-medium mt-1 tracking-wider">06CNUPS5428P1ZV</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form & Map Column -->
+                <div class="lg:col-span-7 space-y-12">
+
+                    <!-- Contact Form Glassmorphic -->
+                    <div class="p-8 md:p-12 glassmorphic rounded-lg relative">
+                        <div class="absolute top-0 right-0 p-6 opacity-5 text-gold-400 pointer-events-none">
+                            <i class="fa-solid fa-feather-pointed text-8xl"></i>
+                        </div>
+
+                        <form id="contact-form" class="space-y-8">
+                            <!-- Web3Forms Configuration -->
+                            <input type="hidden" name="access_key" value="4dc27a13-bc48-4e1e-bb84-2a7a25e81763">
+                            <input type="hidden" name="subject" value="New Inquiry - Nest Developers & Architects">
+                            <input type="hidden" name="from_name" value="Nest Developers Site">
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <!-- Floating Input 1 -->
+                                <div class="relative">
+                                    <input type="text" id="name" name="name" required
+                                        class="peer w-full bg-transparent border-b border-white/20 focus:border-gold-400 outline-none py-2 text-white transition-all text-sm">
+                                    <label for="name"
+                                        class="absolute left-0 top-2 text-slate-400 peer-focus:-translate-y-6 peer-focus:text-gold-400 peer-focus:text-xs peer-valid:-translate-y-6 peer-valid:text-gold-400 peer-valid:text-xs transition-all text-sm pointer-events-none">Full
+                                        Name</label>
+                                </div>
+                                <!-- Floating Input 2 -->
+                                <div class="relative">
+                                    <input type="text" id="phone" name="phone" required
+                                        class="peer w-full bg-transparent border-b border-white/20 focus:border-gold-400 outline-none py-2 text-white transition-all text-sm">
+                                    <label for="phone"
+                                        class="absolute left-0 top-2 text-slate-400 peer-focus:-translate-y-6 peer-focus:text-gold-400 peer-focus:text-xs peer-valid:-translate-y-6 peer-valid:text-gold-400 peer-valid:text-xs transition-all text-sm pointer-events-none">Contact
+                                        Number</label>
+                                </div>
+                                <!-- Floating Input 3 -->
+                                <div class="relative">
+                                    <input type="email" id="email" name="email" required
+                                        class="peer w-full bg-transparent border-b border-white/20 focus:border-gold-400 outline-none py-2 text-white transition-all text-sm">
+                                    <label for="email"
+                                        class="absolute left-0 top-2 text-slate-400 peer-focus:-translate-y-6 peer-focus:text-gold-400 peer-focus:text-xs peer-valid:-translate-y-6 peer-valid:text-gold-400 peer-valid:text-xs transition-all text-sm pointer-events-none">E-mail
+                                        Address</label>
+                                </div>
+                                <!-- Floating Input 4 -->
+                                <div class="relative">
+                                    <input type="text" id="city" name="city" required
+                                        class="peer w-full bg-transparent border-b border-white/20 focus:border-gold-400 outline-none py-2 text-white transition-all text-sm">
+                                    <label for="city"
+                                        class="absolute left-0 top-2 text-slate-400 peer-focus:-translate-y-6 peer-focus:text-gold-400 peer-focus:text-xs peer-valid:-translate-y-6 peer-valid:text-gold-400 peer-valid:text-xs transition-all text-sm pointer-events-none">City</label>
+                                </div>
+                            </div>
+
+                            <!-- Floating Input 5 -->
+                            <div class="relative">
+                                <input type="text" id="project-type" name="project_type" required
+                                    class="peer w-full bg-transparent border-b border-white/20 focus:border-gold-400 outline-none py-2 text-white transition-all text-sm">
+                                <label for="project-type"
+                                    class="absolute left-0 top-2 text-slate-400 peer-focus:-translate-y-6 peer-focus:text-gold-400 peer-focus:text-xs peer-valid:-translate-y-6 peer-valid:text-gold-400 peer-valid:text-xs transition-all text-sm pointer-events-none">Project
+                                    Segment (e.g. Industrial, Villa)</label>
+                            </div>
+
+                            <!-- Floating Textarea -->
+                            <div class="relative">
+                                <textarea id="message" name="message" rows="4" required
+                                    class="peer w-full bg-transparent border-b border-white/20 focus:border-gold-400 outline-none py-2 text-white transition-all text-sm resize-none"></textarea>
+                                <label for="message"
+                                    class="absolute left-0 top-2 text-slate-400 peer-focus:-translate-y-6 peer-focus:text-gold-400 peer-focus:text-xs peer-valid:-translate-y-6 peer-valid:text-gold-400 peer-valid:text-xs transition-all text-sm pointer-events-none">Project
+                                    Overview &amp; Requirements</label>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-4 bg-gold-400 hover:bg-gold-550 text-obsidian font-bold tracking-widest text-xs uppercase rounded transition-colors duration-300">
+                                SUBMIT SECURE INQUIRY
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Map Integration Card -->
+                    <div
+                        class="rounded-lg overflow-hidden border border-white/10 shadow-2xl h-[250px] relative bg-obsidian-950">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3511.4087198305096!2d77.3112002762283!3d28.34752987558231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdc0e1e63a1e5%3A0xdf1690e0c0363293!2sNepco%20Compound!5e0!3m2!1sen!2sin!4v1721062000000!5m2!1sen!2sin"
+                            width="100%" height="100%"
+                            style="border:0; filter: grayscale(1) invert(0.9) contrast(1.2) opacity(0.8);"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Premium Footer -->
+    <footer class="bg-obsidian-950 border-t border-white/[0.05] py-16 text-xs text-slate-400">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 mb-12">
+            <!-- Logo area -->
+            <div class="md:col-span-5 space-y-6">
+                <div class="flex items-center gap-3">
+                    <img src="nda golden logo.png" alt="NDA Logo" class="h-10 w-auto object-contain">
+                    <div class="flex flex-col">
+                        <span class="font-display font-bold text-white tracking-widest text-sm leading-none">NEST
+                            DEVELOPERS</span>
+                        <span
+                            class="font-display font-medium text-[8px] text-gold-400 tracking-[0.25em] mt-1">ARCHITECTS</span>
+                    </div>
+                </div>
+                <p class="leading-relaxed max-w-sm text-slate-400 text-xs">
+                    Since 2015, translating complex structures into landmarks across India. Registered in Faridabad,
+                    built on reliability and safety.
+                </p>
+                <div class="flex gap-4 text-base">
+                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Page Quicklinks -->
+            <div class="md:col-span-3 space-y-4">
+                <h5 class="font-display text-white font-bold tracking-widest uppercase">Quick Links</h5>
+                <ul class="space-y-3">
+                    <li><a href="index.html#home" class="hover:text-gold-400 transition-colors">Home Page</a></li>
+                    <li><a href="about.html" class="hover:text-gold-400 transition-colors">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-gold-400 transition-colors">Core Services</a></li>
+                    <li><a href="projects.html" class="hover:text-gold-400 transition-colors">Portfolio</a></li>
+                    <li><a href="resources.html" class="hover:text-gold-400 transition-colors">Resources &amp;
+                            Machinery</a></li>
+                    <li><a href="contact.html" class="hover:text-gold-400 transition-colors">Contact Panel</a></li>
+                </ul>
+            </div>
+
+            <!-- Verticals -->
+            <div class="md:col-span-4 space-y-4">
+                <h5 class="font-display text-white font-bold tracking-widest uppercase">Our Competency</h5>
+                <ul class="space-y-3">
+                    <li><span class="text-slate-400">Civil &amp; Concrete Foundations</span></li>
+                    <li><span class="text-slate-400">Buildup Floors &amp; Builder Estates</span></li>
+                    <li><span class="text-slate-400">Industrial Warehouse Laying</span></li>
+                    <li><span class="text-slate-400">Modern Architecture &amp; Interiors</span></li>
+                    <li><span class="text-slate-400">External Landscaping &amp; Roads</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Rights -->
+        <div
+            class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/[0.05] flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500">
+            <span>&copy; 2026 Nest Developers &amp; Architects. All Rights Reserved.</span>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-gold-400 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-gold-400 transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script Operations -->
+    <script>
+        // Header Scroll Effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('glassmorphic', 'py-4');
+                header.classList.remove('py-6', 'border-transparent');
+            } else {
+                header.classList.remove('glassmorphic', 'py-4');
+                header.classList.add('py-6', 'border-transparent');
+            }
+        });
+
+        // Mobile Menu Toggling
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+
+        mobileClose.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+        // Web3Forms AJAX Handling
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Form element references
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+
+                // Set sending state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fa-solid fa-spinner animate-spin mr-2"></i> SENDING...';
+
+                const formData = new FormData(contactForm);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                    .then(async (response) => {
+                        let result = await response.json();
+                        if (response.status === 200) {
+                            // Success state UI
+                            submitBtn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> INQUIRY SENT SUCCESSFULLY';
+                            submitBtn.classList.remove('bg-gold-400', 'hover:bg-gold-550');
+                            submitBtn.classList.add('bg-emerald-600', 'text-white');
+                            contactForm.reset();
+
+                            // Reset button state after 5 seconds
+                            setTimeout(() => {
+                                submitBtn.disabled = false;
+                                submitBtn.innerHTML = originalText;
+                                submitBtn.classList.remove('bg-emerald-600', 'text-white');
+                                submitBtn.classList.add('bg-gold-400', 'hover:bg-gold-550');
+                            }, 5000);
+                        } else {
+                            throw new Error(result.message || 'Submission failed');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error submitting form:', error);
+                        // Error state UI
+                        submitBtn.innerHTML = '<i class="fa-solid fa-triangle-exclamation mr-2"></i> SUBMISSION FAILED';
+                        submitBtn.classList.remove('bg-gold-400', 'hover:bg-gold-550');
+                        submitBtn.classList.add('bg-rose-600', 'text-white');
+
+                        // Restore button state after 4 seconds to try again
+                        setTimeout(() => {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.classList.remove('bg-rose-600', 'text-white');
+                            submitBtn.classList.add('bg-gold-400', 'hover:bg-gold-550');
+                        }, 4000);
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Nest Developers & Architects</title>
+
+    <meta name="description"
+        content="Contact Nest Developers & Architects for premium civil construction, industrial warehouses, and luxury architectural planning across North India.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nestdevelopers.in/contact.html">
+
+    <!-- Tailwind CSS and FontAwesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap');
+    </style>
+
+    <!-- Tailwind Theme Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: {
+                            DEFAULT: '#080b11',
+                            50: '#f5f7fa',
+                            100: '#eaeef4',
+                            200: '#cbd5e2',
+                            300: '#9cb0cb',
+                            400: '#6886ae',
+                            500: '#476793',
+                            600: '#375076',
+                            700: '#2e4162',
+                            800: '#1b263b',
+                            900: '#0f172a',
+                            950: '#080b11',
+                        },
+                        gold: {
+                            DEFAULT: '#c5a880',
+                            50: '#fbf9f6',
+                            100: '#f5efe6',
+                            200: '#ebdcc5',
+                            300: '#dbc39d',
+                            400: '#c5a880', // Champagne Gold
+                            550: '#b0926a',
+                            600: '#9d7f57',
+                            700: '#7e6341',
+                            800: '#604a30',
+                            900: '#433320',
+                            950: '#22180e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Utility styles -->
+    <style>
+        .text-glow {
+            text-shadow: 0 0 20px rgba(197, 168, 128, 0.2);
+        }
+
+        .glassmorphic {
+            background-color: rgba(8, 11, 17, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(197, 168, 128, 0.2);
+        }
+
+        /* Smooth Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #080b11;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c5a880;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b0926a;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-obsidian text-slate-300 antialiased overflow-x-hidden">
+
+    <!-- Header / Navbar -->
+    <header id="main-header"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="nda golden logo.png" alt="NDA Logo"
+                    class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
                 <div class="flex flex-col">
                     <span class="font-display font-bold text-lg text-white tracking-widest leading-none">NEST
                         DEVELOPERS</span>
