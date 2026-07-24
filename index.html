@@ -127,6 +127,1441 @@
             position: fixed;
             inset: 0;
             z-index: 99999;
+            background-color: #080b11;
+            /* Matches obsidian bg */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .preloader-circle-spinner {
+            width: 90px;
+            height: 90px;
+            border: 2px solid rgba(197, 168, 128, 0.15);
+            border-top: 2px solid #c5a880;
+            border-radius: 50%;
+            animation: preloader-spin 3s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+        }
+
+        .preloader-logo-container {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .preloader-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            animation: preloader-pulse-glow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes preloader-spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes preloader-pulse-glow {
+
+            0%,
+            100% {
+                transform: scale(0.96);
+                filter: drop-shadow(0 0 5px rgba(197, 168, 128, 0.1));
+            }
+
+            50% {
+                transform: scale(1.04);
+                filter: drop-shadow(0 0 20px rgba(197, 168, 128, 0.35));
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-obsidian text-slate-300 antialiased overflow-x-hidden preloader-active">
+
+    <!-- Preloader Overlay -->
+    <div id="preloader">
+        <div class="relative flex items-center justify-center">
+            <!-- Spinner -->
+            <div class="preloader-circle-spinner"></div>
+            <!-- Logo inside -->
+            <div class="preloader-logo-container">
+                <img src="nda hut golden logo.png" alt="Nest Developers & Architects" class="preloader-logo">
+            </div>
+        </div>
+
+        <!-- Text & Progress Bar -->
+        <div class="mt-8 flex flex-col items-center gap-2 text-center">
+            <span class="font-display text-white text-xs tracking-[0.3em] font-semibold uppercase text-glow">NEST
+                DEVELOPERS</span>
+            <span class="text-gold-400 text-[9px] tracking-[0.4em] font-medium uppercase">ARCHITECTS</span>
+
+            <!-- Progress Track -->
+            <div class="w-32 h-[1px] bg-white/10 rounded-full mt-4 overflow-hidden relative">
+                <div id="preloader-progress"
+                    class="absolute top-0 left-0 h-full bg-gold-400 w-0 transition-all duration-300 ease-out"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Noscript support to prevent lockouts when JS is disabled -->
+    <noscript>
+        <style>
+            #preloader {
+                display: none !important;
+            }
+
+            .preloader-active {
+                overflow: auto !important;
+            }
+        </style>
+    </noscript>
+
+    <!-- Header / Navbar -->
+    <header id="main-header"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="nda golden logo.png" alt="NDA Logo"
+                    class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
+
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="#home"
+                    class="text-sm font-medium text-white tracking-widest hover:text-gold-400 transition-colors duration-300">HOME</a>
+                <a href="about.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">ABOUT</a>
+                <a href="services.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">SERVICES</a>
+                <a href="projects.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">PROJECTS</a>
+                <a href="resources.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">RESOURCES</a>
+                <a href="contact.html"
+                    class="text-sm font-medium text-slate-400 tracking-widest hover:text-gold-400 transition-colors duration-300">CONTACT</a>
+            </nav>
+
+            <!-- CTA Trigger -->
+            <div class="hidden md:block">
+                <a href="contact.html"
+                    class="inline-flex items-center justify-center px-6 py-3 border border-gold-400/30 text-gold-400 hover:text-obsidian hover:bg-gold-400 text-xs font-semibold tracking-widest rounded transition-all duration-300">
+                    GET A QUOTE
+                </a>
+            </div>
+
+            <!-- Mobile Menu Trigger -->
+            <button id="mobile-menu-btn" class="md:hidden text-white hover:text-gold-400 transition-colors"
+                aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu"
+            class="hidden fixed inset-0 bg-obsidian-950 z-40 flex flex-col justify-center items-center gap-8 text-center transition-all duration-500">
+            <button id="mobile-menu-close"
+                class="absolute top-8 right-6 text-white hover:text-gold-400 transition-colors">
+                <i class="fa-solid fa-xmark text-3xl"></i>
+            </button>
+            <a href="#home"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Home</a>
+            <a href="about.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">About</a>
+            <a href="services.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Services</a>
+            <a href="projects.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Projects</a>
+            <a href="resources.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Resources</a>
+            <a href="contact.html"
+                class="mobile-nav-link font-display text-2xl text-white hover:text-gold-400 tracking-wider transition-colors">Contact</a>
+            <a href="contact.html"
+                class="mt-4 inline-flex items-center justify-center px-8 py-4 bg-gold-400 text-obsidian font-bold tracking-widest text-sm rounded hover:bg-gold-550 transition-colors">
+                GET A QUOTE
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section with Premium Image Slider -->
+    <section id="home" class="relative w-full h-screen overflow-hidden bg-obsidian-950 flex items-center">
+        <!-- Hero Background Images Container -->
+        <div class="absolute inset-0 z-0">
+            <!-- Slide 1 -->
+            <div class="hero-slide-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-ken-burns scale-100"
+                    style="background-image: url('building bg.png');"></div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-obsidian-950/90 via-obsidian-950/60 to-obsidian-950/30">
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hero-slide-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-ken-burns scale-100"
+                    style="background-image: url('on site NDA.png');"></div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-obsidian-950/90 via-obsidian-950/60 to-obsidian-950/30">
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="hero-slide-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat animate-ken-burns scale-100"
+                    style="background-image: url('slide3 home.png');"></div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-obsidian-950/90 via-obsidian-950/60 to-obsidian-950/30">
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Content Overlay -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20">
+            <div class="max-w-3xl">
+                <!-- Established Tag -->
+                <div
+                    class="inline-flex items-center gap-3 bg-white/[0.04] backdrop-blur-md px-5 py-2.5 rounded border border-white/10 mb-8">
+                    <span class="w-2.5 h-2.5 bg-gold-400 rounded-full animate-pulse"></span>
+                    <span class="text-xs font-semibold tracking-[0.2em] text-white uppercase">Established 2015 •
+                        Faridabad</span>
+                </div>
+
+                <!-- Slider Title Displays -->
+                <div id="hero-slider-titles">
+                    <!-- Title 1 -->
+                    <div class="hero-title-text hidden">
+                        <h1
+                            class="font-display text-3xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-none mb-6">
+                            NEST DEVELOPERS <br>
+                            <span class="text-gold-400 font-medium italic">&amp; ARCHITECTS</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-300 font-light mb-10 leading-relaxed max-w-xl">
+                            We mean quality. Delivering structural integrity, bespoke engineering, and luxury
+                            architecture across North India.
+                        </p>
+                    </div>
+
+                    <!-- Title 2 -->
+                    <div class="hero-title-text hidden">
+                        <h1
+                            class="font-display text-3xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-none mb-6">
+                            BUILDING FUTURE <br>
+                            <span class="text-gold-400 font-medium italic">WITH INTEGRITY</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-300 font-light mb-10 leading-relaxed max-w-xl">
+                            Each space works efficiently, completing on time and within budget, making a lasting
+                            aesthetic contribution.
+                        </p>
+                    </div>
+
+                    <!-- Title 3 -->
+                    <div class="hero-title-text hidden">
+                        <h1
+                            class="font-display text-3xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-none mb-6">
+                            FROM CONCEPT <br>
+                            <span class="text-gold-400 font-medium italic">TO COMPLETION</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-300 font-light mb-10 leading-relaxed max-w-xl">
+                            Expert turnkey execution in industrial layouts, premium housing, healthcare units, and
+                            campus spaces.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Call to Action Buttons -->
+                <div class="flex flex-wrap gap-5">
+                    <a href="projects.html"
+                        class="inline-flex items-center justify-center px-8 py-4 bg-gold-400 hover:bg-gold-550 text-obsidian font-bold tracking-widest text-xs rounded transition-all duration-300">
+                        EXPLORE PORTFOLIO
+                    </a>
+                    <a href="about.html"
+                        class="inline-flex items-center justify-center px-8 py-4 border border-white/20 hover:border-gold-400/50 hover:text-gold-400 text-white font-bold tracking-widest text-xs rounded transition-all duration-300">
+                        ABOUT THE FIRM
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Nav Dots -->
+        <div class="absolute bottom-10 right-6 md:right-12 z-20 flex flex-col gap-4">
+            <button onclick="setHeroSlide(0)"
+                class="hero-slide-dot w-12 h-1 bg-white/25 hover:bg-gold-400 transition-all rounded"
+                aria-label="Slide 1"></button>
+            <button onclick="setHeroSlide(1)"
+                class="hero-slide-dot w-12 h-1 bg-white/25 hover:bg-gold-400 transition-all rounded"
+                aria-label="Slide 2"></button>
+            <button onclick="setHeroSlide(2)"
+                class="hero-slide-dot w-12 h-1 bg-white/25 hover:bg-gold-400 transition-all rounded"
+                aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Background grid details -->
+        <div class="absolute inset-y-0 right-1/4 w-[1px] bg-white/[0.03] z-0 hidden md:block"></div>
+        <div class="absolute inset-y-0 right-2/4 w-[1px] bg-white/[0.03] z-0 hidden md:block"></div>
+        <div class="absolute inset-y-0 right-3/4 w-[1px] bg-white/[0.03] z-0 hidden md:block"></div>
+    </section>
+
+    <!-- Four Pillars of Excellence Section -->
+    <section class="py-24 bg-obsidian-950 relative border-b border-white/[0.05]">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <span class="text-xs font-semibold tracking-[0.25em] text-gold-400 uppercase block mb-3">Our Core
+                        Verticals</span>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold text-white tracking-tight leading-none">
+                        Pillars of Construction</h2>
+                </div>
+                <p class="max-w-md text-slate-400 text-sm leading-relaxed">
+                    Executing diverse engineering requirements across commercial development, high-capacity industrial
+                    hubs, luxury architectural landscapes, and high-end buildup floors.
+                </p>
+            </div>
+
+            <!-- Pillars Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Pillar 1 -->
+                <div onclick="openPillarModal(1)"
+                    class="group relative h-[450px] overflow-hidden rounded-lg bg-obsidian-900 border border-white/5 hover:border-gold-400/30 transition-all duration-500 cursor-pointer shadow-xl">
+                    <div class="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                        style="background-image: url('slide3 home.png');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/75 to-transparent">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6 sm:p-8 w-full z-10">
+                        <div class="text-gold-400 text-xs tracking-widest font-semibold uppercase mb-2">Pillar 01</div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">Residential Estates</h3>
+                        <p
+                            class="text-slate-400 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 max-h-0 group-hover:max-h-24 overflow-hidden">
+                            From luxury apartments to villas and gated housing complexes, we build homes with modern
+                            elegance and structural reliability.
+                        </p>
+                        <div
+                            class="mt-4 flex items-center gap-2 text-gold-400 text-xs font-semibold tracking-widest uppercase">
+                            Learn Details <span
+                                class="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div onclick="openPillarModal(2)"
+                    class="group relative h-[450px] overflow-hidden rounded-lg bg-obsidian-900 border border-white/5 hover:border-gold-400/30 transition-all duration-500 cursor-pointer shadow-xl">
+                    <div class="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                        style="background-image: url('associate_developers.png');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/75 to-transparent">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6 sm:p-8 w-full z-10">
+                        <div class="text-gold-400 text-xs tracking-widest font-semibold uppercase mb-2">Pillar 02</div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">Industrial Complexes</h3>
+                        <p
+                            class="text-slate-400 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 max-h-0 group-hover:max-h-24 overflow-hidden">
+                            Engineered factories, high-capacity warehouses, cold storages, and production facilities
+                            optimized for heavy load operational efficiency.
+                        </p>
+                        <div
+                            class="mt-4 flex items-center gap-2 text-gold-400 text-xs font-semibold tracking-widest uppercase">
+                            Learn Details <span
+                                class="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div onclick="openPillarModal(3)"
+                    class="group relative h-[450px] overflow-hidden rounded-lg bg-obsidian-900 border border-white/5 hover:border-gold-400/30 transition-all duration-500 cursor-pointer shadow-xl">
+                    <div class="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                        style="background-image: url('vee_dee_enterprises.png');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/75 to-transparent">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6 sm:p-8 w-full z-10">
+                        <div class="text-gold-400 text-xs tracking-widest font-semibold uppercase mb-2">Pillar 03</div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">Commercial & Healthcare</h3>
+                        <p
+                            class="text-slate-400 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 max-h-0 group-hover:max-h-24 overflow-hidden">
+                            Luxury retail resorts, multi-specialty hospital infrastructure, corporate blocks, and
+                            university campuses engineered for longevity.
+                        </p>
+                        <div
+                            class="mt-4 flex items-center gap-2 text-gold-400 text-xs font-semibold tracking-widest uppercase">
+                            Learn Details <span
+                                class="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div onclick="openPillarModal(4)"
+                    class="group relative h-[450px] overflow-hidden rounded-lg bg-obsidian-900 border border-gold-400/30 hover:border-gold-400 transition-all duration-500 cursor-pointer shadow-xl ring-1 ring-gold-400/20">
+                    <div class="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                        style="background-image: url('kanishka_residency.png');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/80 to-transparent">
+                    </div>
+                    <div class="absolute top-4 right-4 z-20">
+                        <span
+                            class="px-2.5 py-1 bg-gold-400/90 text-obsidian text-[10px] font-extrabold tracking-wider uppercase rounded shadow">FEATURED
+                            VERTICAL</span>
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6 sm:p-8 w-full z-10">
+                        <div class="text-gold-400 text-xs tracking-widest font-semibold uppercase mb-2">Pillar 04</div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-3">Buildup Floors</h3>
+                        <p
+                            class="text-slate-400 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 max-h-0 group-hover:max-h-24 overflow-hidden">
+                            Turnkey luxury builder floors & multi-tier floor buildup engineering with customized floor
+                            layouts, modern structural framing, and premium elevation aesthetics.
+                        </p>
+                        <div
+                            class="mt-4 flex items-center gap-2 text-gold-400 text-xs font-semibold tracking-widest uppercase">
+                            Explore Specs <span
+                                class="group-hover:translate-x-2 transition-transform duration-300">→</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Experience & Heritage Section (Founder Focus) -->
+    <section class="py-24 bg-obsidian relative overflow-hidden">
+        <!-- Subtle watermark background -->
+        <div class="absolute right-0 bottom-0 opacity-[0.02] pointer-events-none w-2/5 max-w-md">
+            <img src="white nda feather.png" alt="NDA Leaf Logo">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+                <!-- Left Details Content -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div>
+                        <span class="text-xs font-semibold tracking-[0.25em] text-gold-400 uppercase block mb-3">OUR
+                            HERITAGE</span>
+                        <h2
+                            class="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">
+                            Built on an Unshakable Foundation of <span class="text-gold-400">Quality &amp; Trust</span>
+                        </h2>
+                    </div>
+
+                    <p class="text-slate-400 leading-relaxed text-base">
+                        Nest Developers & Architects was founded by <strong>Sh. Raj Singh Tewatia</strong>, who brings
+                        over <strong>32 years</strong> of extensive expertise in Civil Construction and structural
+                        planning across North India. Over these years, we have built a reputation of zero-compromise
+                        quality and highly professional execution.
+                    </p>
+
+
+
+                    <!-- Stats Boxes -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-6">
+                        <div class="p-3 sm:p-6 bg-obsidian-900/40 rounded border border-white/5">
+                            <span
+                                class="block text-2xl sm:text-4xl font-display font-extrabold text-white text-glow mb-1">32+</span>
+                            <span class="text-[9px] sm:text-xs text-slate-400 uppercase tracking-widest">Years
+                                Expertise</span>
+                        </div>
+                        <div class="p-3 sm:p-6 bg-obsidian-900/40 rounded border border-white/5">
+                            <span
+                                class="block text-2xl sm:text-4xl font-display font-extrabold text-white text-glow mb-1">50+</span>
+                            <span class="text-[9px] sm:text-xs text-slate-400 uppercase tracking-widest">Projects
+                                Done</span>
+                        </div>
+                        <div class="p-3 sm:p-6 bg-obsidian-900/40 rounded border border-white/5">
+                            <span
+                                class="block text-2xl sm:text-4xl font-display font-extrabold text-white text-glow mb-1">150+</span>
+                            <span class="text-[9px] sm:text-xs text-slate-400 uppercase tracking-widest">Cr Project
+                                Value</span>
+                        </div>
+                    </div>
+
+                    <!-- Quote Accent -->
+                    <div class="border-l-2 border-gold-400 pl-6 italic text-slate-300">
+                        "Each space we plan as consultants or build as contractors must work efficiently for owners,
+                        finishing on time, and within the specified budget."
+                    </div>
+
+                    <div>
+                        <a href="about.html"
+                            class="inline-flex items-center gap-3 text-gold-400 text-xs font-bold tracking-widest uppercase hover:text-white transition-colors">
+                            MEET THE LEADERSHIP TEAM <span class="text-lg">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Images/Visuals -->
+                <div class="lg:col-span-5 relative">
+                    <!-- Gold Accents Behind Image -->
+                    <div
+                        class="absolute -inset-4 border border-gold-400/20 rounded-lg pointer-events-none transform translate-x-4 translate-y-4">
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg border border-white/10 shadow-2xl bg-obsidian-900">
+                        <img src="Sh. Raj Singh Tewatia.jpeg" alt="Sh. Raj Singh Tewatia - Founder"
+                            class="w-full h-auto object-cover max-h-[500px]">
+                        <!-- Gold Glass Tag -->
+                        <div
+                            class="absolute bottom-2 left-2 right-2 p-2 glassmorphic rounded flex justify-between items-center">
+                            <div>
+                                <span class="block text-sm font-semibold text-white tracking-wide">Mr. Raj Singh
+                                    Tewatia</span>
+                                <span class="block text-[10px] text-gold-400 uppercase tracking-wider mt-1">Founder
+                                    &amp; Visionary</span>
+                            </div>
+                            <span class="text-gold-400 text-2xl font-serif">“</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Capabilities -->
+    <section class="py-24 bg-obsidian-950 relative border-t border-b border-white/[0.05]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+                <!-- Left Illustration or Side Image -->
+                <div class="lg:col-span-5 order-2 lg:order-1 relative">
+                    <div
+                        class="absolute -inset-4 border border-white/5 rounded-lg pointer-events-none transform -translate-x-4 -translate-y-4">
+                    </div>
+                    <div class="rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="why choose us.png" alt="Nest Builders Team Site Quality Work" class="w-full h-auto">
+                    </div>
+                </div>
+
+                <!-- Right Content Details -->
+                <div class="lg:col-span-7 order-1 lg:order-2 space-y-8">
+                    <div>
+                        <span class="text-xs font-semibold tracking-[0.25em] text-gold-400 uppercase block mb-3">WHY
+                            PARTNER WITH NDA</span>
+                        <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+                            Uncompromising Standards, Engineered for Generations
+                        </h2>
+                    </div>
+
+                    <!-- Features Grid -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded bg-white/[0.02] border border-white/10 flex items-center justify-center text-gold-400">
+                                <i class="fa-solid fa-shield-halved text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-semibold text-white mb-2">Proven Reliability</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">Dozens of completed industrial,
+                                    commercial and residential designs with zero failure rates.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded bg-white/[0.02] border border-white/10 flex items-center justify-center text-gold-400">
+                                <i class="fa-solid fa-clock-rotate-left text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-semibold text-white mb-2">Timely Delivery</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">Efficient project management pipelines
+                                    that guarantee completion on time and in budget.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded bg-white/[0.02] border border-white/10 flex items-center justify-center text-gold-400">
+                                <i class="fa-solid fa-helmet-safety text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-semibold text-white mb-2">Expert Team</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">Certified civil engineers, structure
+                                    supervisors, and Masters level urban planners.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded bg-white/[0.02] border border-white/10 flex items-center justify-center text-gold-400">
+                                <i class="fa-solid fa-indian-rupee-sign text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-semibold text-white mb-2">Cost Optimization</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">Transparent budgeting, competitive raw
+                                    material sourcing, and waste minimization.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Historic / Healthcare Projects Carousel -->
+    <section class="py-24 bg-obsidian-950 relative border-t border-white/[0.05]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16">
+                <span class="text-xs font-semibold tracking-[0.25em] text-gold-400 uppercase block mb-3">PRESTIGIOUS
+                    INFRASTRUCTURE</span>
+                <h2 class="font-display text-4xl font-bold text-white tracking-tight">Institutional &amp; Medical
+                    Landmarks</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="flex flex-col sm:flex-row gap-6 p-6 bg-obsidian-900/40 rounded border border-white/5 hover:border-gold-400/20 transition-all duration-350">
+                    <div class="sm:w-2/5 overflow-hidden rounded">
+                        <img src="fortis.jpg" alt="Fortis Hospital"
+                            class="w-full h-full object-cover min-h-[140px] hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="sm:w-3/5 flex flex-col justify-between py-2">
+                        <div>
+                            <h4 class="font-display font-semibold text-white text-lg">Fortis Hospital, Shalimar Bagh
+                            </h4>
+                            <span class="text-xs text-gold-400 tracking-wider block mt-1">Healthcare Center</span>
+                            <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+                                Complete execution of critical healthcare blocks, sanitation foundations, and interior
+                                layouts.
+                            </p>
+                        </div>
+                        <div class="mt-4 flex justify-between text-[11px] text-slate-400">
+                            <span>2010 - 2011</span>
+                            <span class="text-gold-400 font-semibold">₹3.5 Cr Value</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="flex flex-col sm:flex-row gap-6 p-6 bg-obsidian-900/40 rounded border border-white/5 hover:border-gold-400/20 transition-all duration-350">
+                    <div class="sm:w-2/5 overflow-hidden rounded">
+                        <img src="dctm-college-palwal.avif" alt="DCTM College Palwal"
+                            class="w-full h-full object-cover min-h-[140px] hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="sm:w-3/5 flex flex-col justify-between py-2">
+                        <div>
+                            <h4 class="font-display font-semibold text-white text-lg">DCTM College, Palwal</h4>
+                            <span class="text-xs text-gold-400 tracking-wider block mt-1">Educational Campus</span>
+                            <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+                                Heavy engineering concrete foundation development, structural works, and administration
+                                blocks.
+                            </p>
+                        </div>
+                        <div class="mt-4 flex justify-between text-[11px] text-slate-400">
+                            <span>2007 - 2009</span>
+                            <span class="text-gold-400 font-semibold">₹11 Cr Value</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-20 bg-obsidian-950 border-t border-b border-white/[0.05] overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center max-w-xl mx-auto mb-12 space-y-3">
+                <span class="text-xs font-semibold tracking-[0.25em] text-gold-400 uppercase block">TRUSTED BY INDUSTRY
+                    LEADERS</span>
+                <h2 class="font-display text-3xl font-bold text-white tracking-tight">Our Clients &amp; Partners</h2>
+            </div>
+
+            <!-- Logo Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                <!-- Client 1: Fortis -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="fortis-hospitals-logo-png_seeklogo-214982.png" alt="Fortis Hospitals Logo"
+                                class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">Fortis</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Hospitals</span>
+                </div>
+
+                <!-- Client 2: Manav Rachna -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="manav rachna logo.jpg" alt="Manav Rachna Logo"
+                                class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">Manav
+                        Rachna</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Institutions</span>
+                </div>
+
+                <!-- Client 3: Eldeco -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="eldeco logo.jpg" alt="Eldeco Developers Logo"
+                                class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">Eldeco</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Developers</span>
+                </div>
+
+                <!-- Client 4: BPTP -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="bptp logo.png" alt="BPTP Real Estate Logo" class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">BPTP</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Real Estate</span>
+                </div>
+
+                <!-- Client 5: Omaxe -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="omaxe_limited_logo.jpg" alt="Omaxe Builders Logo"
+                                class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">Omaxe</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Builders</span>
+                </div>
+
+                <!-- Client 6: Ozone -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="ozone group logo.jpg" alt="Ozone Group Logo"
+                                class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">Ozone</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Group</span>
+                </div>
+
+                <!-- Client 7: Harisons -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="harrison logo.jpg" alt="Harisons Furnishings Logo"
+                                class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">Harisons</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Furnishings</span>
+                </div>
+
+                <!-- Client 8: Shri Group -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="shri group.jpg" alt="Shri Group Logo" class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">Shri
+                        Group</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Real Estate</span>
+                </div>
+
+                <!-- Client 9: BHEL -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="bhel logo.jpg" alt="BHEL Heavy Industries Logo"
+                                class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">BHEL</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Heavy Industries</span>
+                </div>
+
+                <!-- Client 10: CONCOR -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="concor logo.png" alt="CONCOR Logistics Logo"
+                                class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">CONCOR</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Logistics</span>
+                </div>
+
+                <!-- Client 11: IRIS School -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="manav rachna international school logo.png" alt="IRIS School Logo"
+                                class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">IRIS
+                        School</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Education</span>
+                </div>
+
+                <!-- Client 12: Sadhu Forging -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="sadhu forging logo.png" alt="Sadhu Forging Ltd Logo"
+                                class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">Sadhu
+                        Forging</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Forging Ltd.</span>
+                </div>
+
+                <!-- Client 13: Associate Developers -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="associate_developers.png" alt="Associate Developers Logo"
+                                class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">Associate</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">Developers LLP</span>
+                </div>
+
+                <!-- Client 14: Yashika PMB -->
+                <div
+                    class="glass-card p-4 flex flex-col items-center justify-center text-center rounded-lg border border-white/5 hover:border-gold-400/30 hover:bg-white/[0.03] transition-all duration-300 min-h-[120px] group shadow-lg">
+                    <div class="h-12 w-full flex items-center justify-center mb-2">
+                        <div
+                            class="bg-white p-1.5 rounded-md flex items-center justify-center h-10 w-full max-w-[120px] group-hover:scale-105 transition-transform duration-300 shadow">
+                            <img src="pmb enterprises.jpeg" alt="Yashika PMB Enterprises Logo"
+                                class="max-h-8 w-auto object-contain">
+                        </div>
+                    </div>
+                    <span
+                        class="text-white font-display font-semibold text-[11px] tracking-wide group-hover:text-gold-400 transition-colors">Yashika</span>
+                    <span class="text-[8px] text-slate-400 uppercase tracking-widest mt-0.5">P.M.B</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Global Premium Footer -->
+    <footer class="bg-obsidian-950 border-t border-white/[0.05] py-16 text-xs text-slate-400">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 mb-12">
+            <!-- Logo area -->
+            <div class="md:col-span-5 space-y-6">
+                <div class="flex items-center gap-3">
+                    <img src="nda golden logo.png" alt="NDA Logo" class="h-10 w-auto object-contain">
+                    <div class="flex flex-col">
+                        <span class="font-display font-bold text-white tracking-widest text-sm leading-none">NEST
+                            DEVELOPERS</span>
+                        <span
+                            class="font-display font-medium text-[8px] text-gold-400 tracking-[0.25em] mt-1">ARCHITECTS</span>
+                    </div>
+                </div>
+                <p class="leading-relaxed max-w-sm text-slate-400 text-xs">
+                    Since 2015, translating complex structures into landmarks across India. Registered in
+                    Faridabad,
+                    built on reliability and safety.
+                </p>
+                <div class="flex gap-4 text-base">
+                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Page Quicklinks -->
+            <div class="md:col-span-3 space-y-4">
+                <h5 class="font-display text-white font-bold tracking-widest uppercase">Quick Links</h5>
+                <ul class="space-y-3">
+                    <li><a href="#home" class="hover:text-gold-400 transition-colors">Home Page</a></li>
+                    <li><a href="about.html" class="hover:text-gold-400 transition-colors">About Us</a></li>
+                    <li><a href="services.html" class="hover:text-gold-400 transition-colors">Core
+                            Services</a></li>
+                    <li><a href="projects.html" class="hover:text-gold-400 transition-colors">Portfolio</a>
+                    </li>
+                    <li><a href="resources.html" class="hover:text-gold-400 transition-colors">Resources &amp;
+                            Machinery</a></li>
+                    <li><a href="contact.html" class="hover:text-gold-400 transition-colors">Contact
+                            Panel</a></li>
+                </ul>
+            </div>
+
+            <!-- Verticals -->
+            <div class="md:col-span-4 space-y-4">
+                <h5 class="font-display text-white font-bold tracking-widest uppercase">Our Competency</h5>
+                <ul class="space-y-3">
+                    <li><span class="text-slate-400">Civil &amp; Concrete Foundations</span></li>
+                    <li><span class="text-slate-400">Buildup Floors &amp; Builder Estates</span></li>
+                    <li><span class="text-slate-400">Industrial Warehouse Laying</span></li>
+                    <li><span class="text-slate-400">Modern Architecture &amp; Interiors</span></li>
+                    <li><span class="text-slate-400">External Landscaping &amp; Roads</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Rights -->
+        <div
+            class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/[0.05] flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500">
+            <span>&copy; 2026 Nest Developers &amp; Architects. All Rights Reserved.</span>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-gold-400 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-gold-400 transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pillar Details Interactive Modal -->
+    <div id="pillar-modal"
+        class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 bg-obsidian-950/80 backdrop-blur-md transition-opacity duration-300">
+        <div
+            class="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-obsidian-900 border border-gold-400/30 rounded-xl shadow-2xl p-6 sm:p-8 text-slate-300 space-y-6">
+            <!-- Modal Close Button -->
+            <button onclick="closePillarModal()"
+                class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-gold-400 hover:border-gold-400 transition-all">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div id="pillar-modal-header" class="space-y-2 border-b border-white/10 pb-6">
+                <span id="pillar-modal-badge" class="text-xs font-bold tracking-[0.25em] text-gold-400 uppercase">PILLAR
+                    04</span>
+                <h3 id="pillar-modal-title" class="font-display text-2xl sm:text-4xl font-bold text-white">Buildup
+                    Floors &amp; Multi-Tier Engineering</h3>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div id="pillar-modal-content" class="space-y-6 text-sm leading-relaxed">
+                <!-- Dynamically populated via JS -->
+            </div>
+
+            <!-- Modal Footer Action -->
+            <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <span class="text-xs text-slate-400">Need structural consultation for your plot or project?</span>
+                <a href="contact.html"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-gold-400 text-obsidian text-xs font-bold tracking-widest rounded hover:bg-gold-550 transition-colors uppercase">
+                    Consult NDA Engineers <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Script Operations -->
+    <script>
+            // Preloader Logic - Smooth Display Duration (~2.2s minimum)
+            (function () {
+                let preloaderProgress = 0;
+                const progressBar = document.getElementById('preloader-progress');
+                const preloader = document.getElementById('preloader');
+                let isHidden = false;
+                const MIN_PRELOADER_TIME = 2200; // Enforces ~2.2 seconds display time for logo animation
+                const startTime = Date.now();
+
+                const progressInterval = setInterval(() => {
+                    if (preloaderProgress < 90) {
+                        preloaderProgress += Math.floor(Math.random() * 8) + 4;
+                        if (preloaderProgress > 90) preloaderProgress = 90;
+                        if (progressBar) progressBar.style.width = preloaderProgress + '%';
+                    }
+                }, 90);
+
+                function hidePreloader() {
+                    if (isHidden) return;
+                    const elapsedTime = Date.now() - startTime;
+                    const remainingTime = Math.max(0, MIN_PRELOADER_TIME - elapsedTime);
+
+                    setTimeout(() => {
+                        if (isHidden) return;
+                        isHidden = true;
+                        clearInterval(progressInterval);
+                        if (progressBar) progressBar.style.width = '100%';
+
+                        setTimeout(() => {
+                            if (preloader) {
+                                preloader.style.opacity = '0';
+                                preloader.style.transform = 'scale(1.03)';
+                            }
+                            document.documentElement.classList.remove('preloader-active');
+                            document.body.classList.remove('preloader-active');
+
+                            setTimeout(() => {
+                                if (preloader) preloader.remove();
+                            }, 500);
+                        }, 250);
+                    }, remainingTime);
+                }
+
+                if (document.readyState === 'complete') {
+                    hidePreloader();
+                } else {
+                    window.addEventListener('load', hidePreloader);
+                    setTimeout(hidePreloader, 4000); // Safety fallback
+                }
+            })();
+
+        // Pillar Modal Data and Functions
+        const pillarDataMap = {
+            1: {
+                badge: "Pillar 01 • Residential Vertical",
+                title: "Residential Estates & Luxury Complexes",
+                content: `
+                    <p class="text-slate-300">From high-density housing blocks to private luxury villas, Nest Developers & Architects executes residential projects focused on spatial efficiency, structural integrity, and architectural luxury.</p>
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 bg-obsidian-950 rounded border border-white/5"><h5 class="font-bold text-white mb-1">High-Rise Housing</h5><p class="text-xs text-slate-400">Multi-storey housing societies built with robust RCC framed structures and compliance with regional building bylaws.</p></div>
+                        <div class="p-4 bg-obsidian-950 rounded border border-white/5"><h5 class="font-bold text-white mb-1">Luxury Gated Villas</h5><p class="text-xs text-slate-400">Custom residential homes with modern architectural facades, private landscape gardens, and high-end security infrastructure.</p></div>
+                    </div>`
+            },
+            2: {
+                badge: "Pillar 02 • Industrial Vertical",
+                title: "Industrial Complexes & Logistic Hubs",
+                content: `
+                    <p class="text-slate-300">Heavy-duty civil construction for industrial manufacturing units, cold storages, automated warehouse parks, and PEB steel structures designed for maximum load capacity.</p>
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 bg-obsidian-950 rounded border border-white/5"><h5 class="font-bold text-white mb-1">Heavy Machine Castings</h5><p class="text-xs text-slate-400">Vibration-damped concrete foundation beds capable of supporting heavy industrial machinery and high-speed cranes.</p></div>
+                        <div class="p-4 bg-obsidian-950 rounded border border-white/5"><h5 class="font-bold text-white mb-1">PEB Steel Warehouses</h5><p class="text-xs text-slate-400">Pre-engineered steel building frames for fast assembly, wide clear spans, and high-volume storage capacity.</p></div>
+                    </div>`
+            },
+            3: {
+                badge: "Pillar 03 • Commercial Vertical",
+                title: "Commercial & Healthcare Infrastructure",
+                content: `
+                    <p class="text-slate-300">Execution of complex multi-specialty hospitals, university campuses, corporate blocks, and luxury retail resorts with specialized MEP and environmental controls.</p>
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 bg-obsidian-950 rounded border border-white/5"><h5 class="font-bold text-white mb-1">Medical Infrastructure</h5><p class="text-xs text-slate-400">ICU, OT wards, radiation shielding, bio-waste drainage channeling, and sterile HVAC air handling setups.</p></div>
+                        <div class="p-4 bg-obsidian-950 rounded border border-white/5"><h5 class="font-bold text-white mb-1">Commercial & Campus Blocks</h5><p class="text-xs text-slate-400">Modern glass elevations, high-traffic flooring, administrative complexes, and academic block developments.</p></div>
+                    </div>`
+            },
+            4: {
+                badge: "Pillar 04 • Buildup Floors Core Competency",
+                title: "Buildup Floors & Independent Floor Engineering",
+                content: `
+                    <div class="space-y-4">
+                        <p class="text-slate-300">NDA is a pioneer in turnkey <strong>Buildup Floors</strong>—constructing independent luxury multi-story builder floors (Stilt + 4 Floors, Basement + Ground + 3 Floors) with customized floor layouts, independent MEP stacks, elevator cores, and contemporary elevations.</p>
+                        
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="p-4 bg-obsidian-950 rounded border border-gold-400/20">
+                                <h5 class="font-bold text-gold-400 mb-1 flex items-center gap-2"><i class="fa-solid fa-layer-group"></i> Structural Framing</h5>
+                                <p class="text-xs text-slate-400">High-grade M25/M30 concrete slab pours, FE-550 TMT steel rebar columns, and seismic Zone 4 compliant raft/footing foundations.</p>
+                            </div>
+                            <div class="p-4 bg-obsidian-950 rounded border border-gold-400/20">
+                                <h5 class="font-bold text-gold-400 mb-1 flex items-center gap-2"><i class="fa-solid fa-bolt"></i> Independent Utility Lines</h5>
+                                <p class="text-xs text-slate-400">Separate 3-phase electric sub-meters, individual overhead water tanks, dedicated sewage stacks, and VRV HVAC ducting per floor.</p>
+                            </div>
+                            <div class="p-4 bg-obsidian-950 rounded border border-gold-400/20">
+                                <h5 class="font-bold text-gold-400 mb-1 flex items-center gap-2"><i class="fa-solid fa-elevator"></i> Stilt & Vertical Circulation</h5>
+                                <p class="text-xs text-slate-400">Ground-level stilt parking with heavy paver flooring, reinforced concrete lift shafts for high-speed gearless elevators, and granite stairs.</p>
+                            </div>
+                            <div class="p-4 bg-obsidian-950 rounded border border-gold-400/20">
+                                <h5 class="font-bold text-gold-400 mb-1 flex items-center gap-2"><i class="fa-solid fa-gem"></i> Luxury Facade Finishes</h5>
+                                <p class="text-xs text-slate-400">Weather-proof stone cladding, double-glazed glass balcony railings, terracotta louvers, and ambient architectural LED profile lighting.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-white/[0.02] rounded border border-white/10">
+                            <h5 class="font-bold text-white text-xs uppercase tracking-wider mb-2">Featured Buildup Floor Milestones</h5>
+                            <ul class="space-y-2 text-xs text-slate-300">
+                                <li class="flex items-center justify-between"><span>• 578 Kanishka Residency (Sector 35, Faridabad)</span><span class="text-gold-400 font-semibold">Ongoing Builder Floor</span></li>
+                                <li class="flex items-center justify-between"><span>• PC 114 Parkland Pride (Sec-77, Faridabad)</span><span class="text-gold-400 font-semibold">Ongoing Builder Floor</span></li>
+                                <li class="flex items-center justify-between"><span>• Eldeco Freedom Floors (GT Road, Ludhiana)</span><span class="text-slate-400">Completed Multi-Floor</span></li>
+                            </ul>
+                        </div>
+                    </div>`
+            }
+        };
+
+        function openPillarModal(pillarId) {
+            const data = pillarDataMap[pillarId];
+            if (!data) return;
+            const badgeEl = document.getElementById('pillar-modal-badge');
+            const titleEl = document.getElementById('pillar-modal-title');
+            const contentEl = document.getElementById('pillar-modal-content');
+            if (badgeEl) badgeEl.innerText = data.badge;
+            if (titleEl) titleEl.innerText = data.title;
+            if (contentEl) contentEl.innerHTML = data.content;
+            const modal = document.getElementById('pillar-modal');
+            if (modal) modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePillarModal() {
+            const modal = document.getElementById('pillar-modal');
+            if (modal) modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on background click
+        document.getElementById('pillar-modal')?.addEventListener('click', (e) => {
+            if (e.target.id === 'pillar-modal') {
+                closePillarModal();
+            }
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('main-header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('glassmorphic', 'py-4');
+                    header.classList.remove('py-6', 'border-transparent');
+                } else {
+                    header.classList.remove('glassmorphic', 'py-4');
+                    header.classList.add('py-6', 'border-transparent');
+                }
+            });
+        }
+
+        // Mobile Menu Toggling
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        const closeMenu = () => {
+            if (mobileMenu) mobileMenu.classList.add('hidden');
+            document.body.style.overflow = '';
+        };
+
+        if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+        // Hero Image Slider Script
+        let activeHeroSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide-item');
+        const heroTitleTexts = document.querySelectorAll('.hero-title-text');
+        const heroDots = document.querySelectorAll('.hero-slide-dot');
+
+        function setHeroSlide(index) {
+            if (!heroSlides.length) return;
+            heroSlides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0');
+                    slide.classList.add('opacity-100');
+                } else {
+                    slide.classList.add('opacity-0');
+                    slide.classList.remove('opacity-100');
+                }
+            });
+
+            heroTitleTexts.forEach((textBlock, i) => {
+                if (i === index) {
+                    textBlock.classList.remove('hidden');
+                    textBlock.classList.add('block');
+                } else {
+                    textBlock.classList.add('hidden');
+                    textBlock.classList.remove('block');
+                }
+            });
+
+            heroDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('bg-gold-400', 'w-16');
+                    dot.classList.remove('bg-white/25', 'w-12');
+                } else {
+                    dot.classList.remove('bg-gold-400', 'w-16');
+                    dot.classList.add('bg-white/25', 'w-12');
+                }
+            });
+
+            activeHeroSlide = index;
+        }
+
+        function nextHeroSlide() {
+            if (!heroSlides.length) return;
+            let nextIndex = (activeHeroSlide + 1) % heroSlides.length;
+            setHeroSlide(nextIndex);
+        }
+
+        if (heroSlides.length > 0) {
+            setInterval(nextHeroSlide, 7000);
+            setHeroSlide(0);
+        }
+
+        // Portfolio tab filter database
+        const portfolioData = [
+            { type: "residential", name: "578, Kanishka Residency", desc: "Premium ongoing builder floor residential project featuring customized layouts, modern structural design, and premium finish in Sector 35, Faridabad.", client: "Self / Residents", finish: "Ongoing (Jan 2026 - Present)", img: "kanishka_residency.png" },
+            { type: "commercial", name: "Singhla Hospital", desc: "Completed state-of-the-art multi-story healthcare facility and hospital building structural layout and finishing in Bhiwadi, Rajasthan.", client: "Singhla Hospital Trust", finish: "2020 - 2022", img: "singhla_hospital.jpeg" },
+            { type: "industrial", name: "Vee Dee Enterprises", desc: "Completed heavy engineering industrial warehouse framing, factory foundations, and layout execution in IMT Faridabad.", client: "Vee Dee Enterprises", finish: "2020 - 2021", img: "vee_dee_enterprises.png" },
+            { type: "industrial", name: "PMB Enterprises", desc: "Completed high-spec industrial manufacturing facility structures, modern front glass curtain walls, and storage hubs in IMT Faridabad.", client: "PMB Enterprises", finish: "2020 - 2022", img: "pmb enterprises.jpeg" },
+            { type: "residential", name: "The Kshitij CGHS Ltd.", desc: "Completed premium multi-story group housing tower construction layout, core utility setups, and building elevations in Faridabad.", client: "The Kshitij CGHS Ltd.", finish: "2018 - 2021", img: "kshitij_cghs.jpeg" },
+            { type: "residential", name: "PB-165, Park Land Pride", desc: "Completed high-end residential apartments architectural facade designs, highlighting integrated lighting systems and open terraces.", client: "Residents / Owners", finish: "2022 - 2024", img: "parkland_pride_pb165.png" },
+            { type: "residential", name: "PC 114, Parkland Pride", desc: "Ongoing premium residential builder floor project presenting luxury specifications, detailed layout design, and structural framing inside BPTP Parkland Pride, Sec-77, Faridabad.", client: "BPTP Parkland Pride", finish: "Ongoing (Oct 2025 - Present)", img: "parkland_pride.png" },
+            { type: "residential", name: "Eldeco Freedom Floors", desc: "Completed luxury residential floor units highlighting premium brick facades, community utilities, and campus layouts on GT Road, Ludhiana.", client: "Eldeco Group", finish: "2010 - 2013", img: "eldeco_freedom.png" },
+            { type: "industrial", name: "Swastik Industrial Park", desc: "Ongoing industrial park development spanning 25 acres, implementing warehouse layout designs, transit roads, and concrete floor castings in Palwal, Haryana.", client: "Swastik Group", finish: "Ongoing (July 2025 - Present)", img: "swastik_industrial.png" },
+            { type: "industrial", name: "Associate Global Developers", desc: "Ongoing mega-scale industrial development spanning 35 acres. Establishing warehouse structural layouts, heavy utilities, and transit framing in Palwal.", client: "Associate Global Developers LLP", finish: "Ongoing (Apr 2026 - Present)", img: "associate_developers.png" },
+            { type: "commercial", name: "Maa Omwati College", desc: "Completed educational institutional project in Hodal. Executed robust multi-story concrete foundations, campus layout design, and academic blocks.", client: "Maa Omwati Trust", finish: "2006 - 2008", img: "Maa Omwari College.jpg" },
+            { type: "residential", name: "Shri Shivkrishna Dham", desc: "A prestigious large-scale Dharamshala building executed in Vrindavan for the Shri ShivKrishna Trust. Showcases classic arches combined with heavy structural masonry.", client: "Shri ShivKrishna Trust", finish: "2018", img: "shri shiv krishna dham.png" },
+            { type: "industrial", name: "TEX INDIA Industrial Block", desc: "Heavy engineering industrial factory and warehouse infrastructure layout laid in IMT Faridabad, optimizing floor loads for high weight industrial manufacturing.", client: "TEX INDIA Group", finish: "2017", img: "Tex India Industrial Building.png" },
+            { type: "commercial", name: "Hotel Rosewood Retreat", desc: "A luxurious multi-story retail resort setup built at Bhimtal, highlighting modern glass interiors and premium wooden exterior elevations.", client: "Rosewood Group", finish: "2019", img: "Hotel Rosewood Retreat .png" },
+            { type: "residential", name: "Park Land Pride Apartments", desc: "A modern developer floor residential setup built with premium specifications, highlighting open glass balconies and clean lines.", client: "Park Land", finish: "2024", img: "park land pride apartment.jpg" },
+            { type: "industrial", name: "Airtech Warehouse Hub", desc: "A heavy loading warehouse installation utilizing structural steel fabrication and modern temperature isolation roofing panels.", client: "Airtech Cooling Pvt Ltd", finish: "2020", img: "airtech cooling pvt. ltd.jpg" }
+        ];
+
+        let activeFilteredPortfolio = [...portfolioData];
+        let portfolioIndex = 0;
+
+        const portfolioImg = document.getElementById('portfolio-slide-img');
+        const portfolioTag = document.getElementById('portfolio-proj-tag');
+        const portfolioName = document.getElementById('portfolio-proj-name');
+        const portfolioDesc = document.getElementById('portfolio-proj-desc');
+        const portfolioClient = document.getElementById('portfolio-proj-client');
+        const portfolioFinish = document.getElementById('portfolio-proj-finish');
+        const portfolioCard = document.getElementById('portfolio-info-card');
+
+        function updatePortfolioDisplay() {
+            if (activeFilteredPortfolio.length === 0) return;
+            const item = activeFilteredPortfolio[portfolioIndex];
+
+            // Transition effect safely
+            if (portfolioCard) {
+                portfolioCard.style.opacity = '0';
+                portfolioCard.style.transform = 'translateY(20px)';
+            }
+            if (portfolioImg) {
+                portfolioImg.style.opacity = '0';
+            }
+
+            setTimeout(() => {
+                if (portfolioImg) portfolioImg.style.backgroundImage = `url('${item.img}')`;
+                if (portfolioTag) portfolioTag.innerText = item.type;
+                if (portfolioName) portfolioName.innerText = item.name;
+                if (portfolioDesc) portfolioDesc.innerText = item.desc;
+                if (portfolioClient) portfolioClient.innerText = item.client;
+                if (portfolioFinish) portfolioFinish.innerText = item.finish;
+
+                if (portfolioImg) portfolioImg.style.opacity = '1';
+                if (portfolioCard) {
+                    portfolioCard.style.opacity = '1';
+                    portfolioCard.style.transform = 'translateY(0)';
+                }
+            }, 300);
+        }
+
+        function filterPortfolio(type) {
+            const tabs = document.querySelectorAll('.portfolio-tab-btn');
+            tabs.forEach(tab => {
+                if (tab.innerText.toLowerCase().includes(type) || (type === 'all' && tab.innerText.toLowerCase().includes('all'))) {
+                    tab.classList.add('text-white', 'bg-white/[0.02]', 'border-gold-400');
+                    tab.classList.remove('text-slate-400');
+                } else {
+                    tab.classList.remove('text-white', 'bg-white/[0.02]', 'border-gold-400');
+                    tab.classList.add('text-slate-400');
+                }
+            });
+
+            if (type === 'all') {
+                activeFilteredPortfolio = [...portfolioData];
+            } else {
+                activeFilteredPortfolio = portfolioData.filter(item => item.type === type);
+            }
+            portfolioIndex = 0;
+            updatePortfolioDisplay();
+        }
+
+        function nextPortfolioItem() {
+            if (activeFilteredPortfolio.length === 0) return;
+            portfolioIndex = (portfolioIndex + 1) % activeFilteredPortfolio.length;
+            updatePortfolioDisplay();
+        }
+
+        function prevPortfolioItem() {
+            if (activeFilteredPortfolio.length === 0) return;
+            portfolioIndex = (portfolioIndex - 1 + activeFilteredPortfolio.length) % activeFilteredPortfolio.length;
+            updatePortfolioDisplay();
+        }
+
+        // Initialize Portfolio Display Safely
+        filterPortfolio('all');
+    </script>
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en" class="scroll-smooth preloader-active">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nest Developers & Architects | We Mean Quality</title>
+
+    <!-- Meta details for SEO -->
+    <meta name="description"
+        content="Nest Developers & Architects delivers premium civil construction and architectural excellence across North India. Reimagining spaces since 2015.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nestdevelopers.in/">
+
+    <!-- Tailwind CSS and FontAwesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts: Syne (headings) & Inter (body) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap');
+    </style>
+
+    <!-- Tailwind Theme Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: {
+                            DEFAULT: '#080b11',
+                            50: '#f5f7fa',
+                            100: '#eaeef4',
+                            200: '#cbd5e2',
+                            300: '#9cb0cb',
+                            400: '#6886ae',
+                            500: '#476793',
+                            600: '#375076',
+                            700: '#2e4162',
+                            800: '#1b263b',
+                            900: '#0f172a',
+                            950: '#080b11',
+                        },
+                        gold: {
+                            DEFAULT: '#c5a880',
+                            50: '#fbf9f6',
+                            100: '#f5efe6',
+                            200: '#ebdcc5',
+                            300: '#dbc39d',
+                            400: '#c5a880', // Champagne Gold
+                            550: '#b0926a',
+                            600: '#9d7f57',
+                            700: '#7e6341',
+                            800: '#604a30',
+                            900: '#433320',
+                            950: '#22180e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    },
+                    animation: {
+                        'ken-burns': 'kenburns 20s ease infinite alternate',
+                    },
+                    keyframes: {
+                        kenburns: {
+                            '0%': { transform: 'scale(1) translate(0px, 0px)' },
+                            '100%': { transform: 'scale(1.12) translate(-10px, -5px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Utility styles -->
+    <style>
+        .text-glow {
+            text-shadow: 0 0 20px rgba(197, 168, 128, 0.2);
+        }
+
+        .glassmorphic {
+            background-color: rgba(8, 11, 17, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(197, 168, 128, 0.2);
+        }
+
+        /* Smooth Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #080b11;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c5a880;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b0926a;
+        }
+
+        /* Preloader Styles */
+        .preloader-active {
+            overflow: hidden !important;
+            height: 100vh;
+        }
+
+        #preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
             background-color: #080b11; /* Matches obsidian bg */
             display: flex;
             flex-direction: column;
