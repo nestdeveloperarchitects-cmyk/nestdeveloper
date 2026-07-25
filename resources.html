@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Google Fonts -->
-        <style>
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap');
     </style>
 
@@ -187,29 +187,25 @@
     </header>
 
     <!-- Subpage Hero -->
-    <section class="relative w-full h-[65vh] min-h-[440px] flex items-center bg-obsidian-950 overflow-hidden">
+    <section class="relative w-full h-[60vh] min-h-[450px] flex items-center bg-obsidian-950 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-cover bg-center opacity-30 scale-105"
                 style="background-image: url('cranebackground.avif');"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/70 to-transparent"></div>
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24">
-            <div class="max-w-3xl space-y-4">
-                <span
-                    class="inline-flex items-center gap-2 px-3 py-1 bg-gold-400/10 border border-gold-400/20 rounded text-gold-400 text-xs font-semibold tracking-[0.2em] uppercase">
-                    <i class="fa-solid fa-screwdriver-wrench"></i> CORPORATE ASSETS &amp; FLEET
-                </span>
-                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-none">
-                    Our Resources
-                </h1>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-                    Our extensive in-house inventory of heavy-duty machinery, batching plants, precision survey units, and structural formwork guarantees uncompromised quality, structural safety, and rapid execution.
-                </p>
-            </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 text-center">
+            <span class="text-xs font-semibold tracking-[0.3em] text-gold-400 uppercase block mb-4">CORPORATE ASSETS</span>
+            <h1
+                class="font-display text-3xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-none">
+                Our Resources</h1>
+            <p class="mt-6 text-slate-400 text-sm max-w-lg mx-auto leading-relaxed">
+                Our extensive in-house inventory of heavy-duty machinery, batching plants, precision survey units, and
+                structural formwork guarantees uncompromised quality and rapid execution.
+            </p>
 
             <!-- Stats Bar -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 pt-8 border-t border-white/10 max-w-4xl">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mt-10 pt-8 border-t border-white/10 max-w-4xl mx-auto text-center">
                 <div class="space-y-1">
                     <span class="font-display text-2xl sm:text-3xl font-bold text-gold-400">40+ UNITS</span>
                     <p class="text-[11px] text-slate-400 tracking-wider uppercase">Heavy Equipment Fleet</p>
@@ -237,17 +233,29 @@
             <!-- Section Header -->
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                 <div>
-                    <span class="text-xs font-semibold tracking-[0.25em] text-gold-400 uppercase block mb-2">EQUIPMENT SPOTLIGHT</span>
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">Featured Machinery &amp; Equipment</h2>
+                    <span class="text-xs font-semibold tracking-[0.25em] text-gold-400 uppercase block mb-2">EQUIPMENT
+                        SPOTLIGHT</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">Featured Machinery
+                        &amp; Equipment</h2>
                 </div>
 
                 <!-- Category Filters -->
                 <div class="flex flex-wrap gap-2">
-                    <button class="filter-tab active px-4 py-2 text-xs font-semibold rounded border border-white/10 text-slate-300 hover:text-white transition-all" onclick="filterGallery('all')">All Equipment</button>
-                    <button class="filter-tab px-4 py-2 text-xs font-semibold rounded border border-white/10 text-slate-300 hover:text-white transition-all" onclick="filterGallery('earthmovers')">Earthmovers</button>
-                    <button class="filter-tab px-4 py-2 text-xs font-semibold rounded border border-white/10 text-slate-300 hover:text-white transition-all" onclick="filterGallery('concrete')">Concrete &amp; Lifts</button>
-                    <button class="filter-tab px-4 py-2 text-xs font-semibold rounded border border-white/10 text-slate-300 hover:text-white transition-all" onclick="filterGallery('fabrication')">Fabrication</button>
-                    <button class="filter-tab px-4 py-2 text-xs font-semibold rounded border border-white/10 text-slate-300 hover:text-white transition-all" onclick="filterGallery('survey')">Survey &amp; Testing</button>
+                    <button
+                        class="filter-tab active px-4 py-2 text-xs font-semibold rounded border border-white/10 text-slate-300 hover:text-white transition-all"
+                        onclick="filterGallery('all')">All Equipment</button>
+                    <button
+                        class="filter-tab px-4 py-2 text-xs font-semibold rounded border border-white/10 text-slate-300 hover:text-white transition-all"
+                        onclick="filterGallery('earthmovers')">Earthmovers</button>
+                    <button
+                        class="filter-tab px-4 py-2 text-xs font-semibold rounded border border-white/10 text-slate-300 hover:text-white transition-all"
+                        onclick="filterGallery('concrete')">Concrete &amp; Lifts</button>
+                    <button
+                        class="filter-tab px-4 py-2 text-xs font-semibold rounded border border-white/10 text-slate-300 hover:text-white transition-all"
+                        onclick="filterGallery('fabrication')">Fabrication</button>
+                    <button
+                        class="filter-tab px-4 py-2 text-xs font-semibold rounded border border-white/10 text-slate-300 hover:text-white transition-all"
+                        onclick="filterGallery('survey')">Survey &amp; Testing</button>
                 </div>
             </div>
 
@@ -255,157 +263,211 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="machinery-gallery">
 
                 <!-- Machinery Card 1 -->
-                <div class="gallery-card glass-card rounded-xl overflow-hidden group border border-white/10" data-category="earthmovers">
+                <div class="gallery-card glass-card rounded-xl overflow-hidden group border border-white/10"
+                    data-category="earthmovers">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="excavator_earthmover.png" alt="JCB Excavator & Earthmovers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-4 right-4 bg-gold-400 text-obsidian text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
+                        <img src="excavator_earthmover.png" alt="JCB Excavator & Earthmovers"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent">
+                        </div>
+                        <span
+                            class="absolute top-4 right-4 bg-gold-400 text-obsidian text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
                             FLEET READY
                         </span>
-                        <span class="absolute bottom-4 left-4 bg-obsidian-950/80 backdrop-blur border border-white/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded">
+                        <span
+                            class="absolute bottom-4 left-4 bg-obsidian-950/80 backdrop-blur border border-white/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded">
                             <i class="fa-solid fa-truck-monster mr-1.5"></i> Earthmovers &amp; Fleet
                         </span>
                     </div>
                     <div class="p-6 space-y-4">
-                        <h3 class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
+                        <h3
+                            class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
                             JCB Excavators &amp; Heavy Fleet
                         </h3>
                         <p class="text-xs text-slate-400 leading-relaxed">
-                            Heavy-duty hydraulic excavators, backhoe loaders, soil compactors, and motor graders for deep foundation digging, site grading, and earthworks.
+                            Heavy-duty hydraulic excavators, backhoe loaders, soil compactors, and motor graders for
+                            deep foundation digging, site grading, and earthworks.
                         </p>
                         <div class="pt-4 border-t border-white/5 flex justify-between items-center text-xs">
-                            <span class="text-slate-400"><strong class="text-white">Count:</strong> 2 Backhoes | 1 Excavator</span>
-                            <span class="text-gold-400 font-semibold flex items-center gap-1">In-Stock <i class="fa-solid fa-circle-check text-[10px]"></i></span>
+                            <span class="text-slate-400"><strong class="text-white">Count:</strong> 2 Backhoes | 1
+                                Excavator</span>
+                            <span class="text-gold-400 font-semibold flex items-center gap-1">In-Stock <i
+                                    class="fa-solid fa-circle-check text-[10px]"></i></span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Machinery Card 2 -->
-                <div class="gallery-card glass-card rounded-xl overflow-hidden group border border-white/10" data-category="concrete">
+                <div class="gallery-card glass-card rounded-xl overflow-hidden group border border-white/10"
+                    data-category="concrete">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="concrete_batching_plant.png" alt="Concrete Batching Plant & Mixers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-4 right-4 bg-gold-400 text-obsidian text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
+                        <img src="concrete_batching_plant.png" alt="Concrete Batching Plant & Mixers"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent">
+                        </div>
+                        <span
+                            class="absolute top-4 right-4 bg-gold-400 text-obsidian text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
                             HIGH CAPACITY
                         </span>
-                        <span class="absolute bottom-4 left-4 bg-obsidian-950/80 backdrop-blur border border-white/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded">
+                        <span
+                            class="absolute bottom-4 left-4 bg-obsidian-950/80 backdrop-blur border border-white/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded">
                             <i class="fa-solid fa-cubes mr-1.5"></i> Concrete &amp; Lifting
                         </span>
                     </div>
                     <div class="p-6 space-y-4">
-                        <h3 class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
+                        <h3
+                            class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
                             Concrete Batching Plant &amp; Hoist Lifts
                         </h3>
                         <p class="text-xs text-slate-400 leading-relaxed">
-                            Turnkey automated concrete batching plant, 10 heavy concrete mixture units, 5 multi-tier hoist lifts, and needle/plate vibrators for dense casting.
+                            Turnkey automated concrete batching plant, 10 heavy concrete mixture units, 5 multi-tier
+                            hoist lifts, and needle/plate vibrators for dense casting.
                         </p>
                         <div class="pt-4 border-t border-white/5 flex justify-between items-center text-xs">
-                            <span class="text-slate-400"><strong class="text-white">Count:</strong> 1 Plant | 10 Mixers | 5 Hoists</span>
-                            <span class="text-gold-400 font-semibold flex items-center gap-1">Operated <i class="fa-solid fa-circle-check text-[10px]"></i></span>
+                            <span class="text-slate-400"><strong class="text-white">Count:</strong> 1 Plant | 10 Mixers
+                                | 5 Hoists</span>
+                            <span class="text-gold-400 font-semibold flex items-center gap-1">Operated <i
+                                    class="fa-solid fa-circle-check text-[10px]"></i></span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Machinery Card 3 -->
-                <div class="gallery-card glass-card rounded-xl overflow-hidden group border border-white/10" data-category="fabrication">
+                <div class="gallery-card glass-card rounded-xl overflow-hidden group border border-white/10"
+                    data-category="fabrication">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="rebar_cutting_bending.png" alt="Steel Bar Cutting & Bending Machines" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-4 right-4 bg-gold-400 text-obsidian text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
+                        <img src="rebar_cutting_bending.png" alt="Steel Bar Cutting & Bending Machines"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent">
+                        </div>
+                        <span
+                            class="absolute top-4 right-4 bg-gold-400 text-obsidian text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
                             PRECISION STEEL
                         </span>
-                        <span class="absolute bottom-4 left-4 bg-obsidian-950/80 backdrop-blur border border-white/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded">
+                        <span
+                            class="absolute bottom-4 left-4 bg-obsidian-950/80 backdrop-blur border border-white/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded">
                             <i class="fa-solid fa-scissors mr-1.5"></i> Fabrication &amp; Cutting
                         </span>
                     </div>
                     <div class="p-6 space-y-4">
-                        <h3 class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
+                        <h3
+                            class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
                             Rebar Steel Cutters &amp; Bending Machines
                         </h3>
                         <p class="text-xs text-slate-400 leading-relaxed">
-                            Industrial hydraulic bar cutting and bending machines, chopsaws, demolition hammers, and welding machines for rapid high-tensile rebar steel fabrication.
+                            Industrial hydraulic bar cutting and bending machines, chopsaws, demolition hammers, and
+                            welding machines for rapid high-tensile rebar steel fabrication.
                         </p>
                         <div class="pt-4 border-t border-white/5 flex justify-between items-center text-xs">
-                            <span class="text-slate-400"><strong class="text-white">Count:</strong> 5 Cutters | 3 Benders | 10 Chopsaws</span>
-                            <span class="text-gold-400 font-semibold flex items-center gap-1">Heavy Duty <i class="fa-solid fa-circle-check text-[10px]"></i></span>
+                            <span class="text-slate-400"><strong class="text-white">Count:</strong> 5 Cutters | 3
+                                Benders | 10 Chopsaws</span>
+                            <span class="text-gold-400 font-semibold flex items-center gap-1">Heavy Duty <i
+                                    class="fa-solid fa-circle-check text-[10px]"></i></span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Machinery Card 4 -->
-                <div class="gallery-card glass-card rounded-xl overflow-hidden group border border-white/10" data-category="survey">
+                <div class="gallery-card glass-card rounded-xl overflow-hidden group border border-white/10"
+                    data-category="survey">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="surveying_total_station.png" alt="Total Station & Auto Level Survey Instruments" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-4 right-4 bg-gold-400 text-obsidian text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
+                        <img src="surveying_total_station.png" alt="Total Station & Auto Level Survey Instruments"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent">
+                        </div>
+                        <span
+                            class="absolute top-4 right-4 bg-gold-400 text-obsidian text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
                             SUB-MM ACCURACY
                         </span>
-                        <span class="absolute bottom-4 left-4 bg-obsidian-950/80 backdrop-blur border border-white/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded">
+                        <span
+                            class="absolute bottom-4 left-4 bg-obsidian-950/80 backdrop-blur border border-white/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded">
                             <i class="fa-solid fa-helmet-safety mr-1.5"></i> Survey &amp; Testing
                         </span>
                     </div>
                     <div class="p-6 space-y-4">
-                        <h3 class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
+                        <h3
+                            class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
                             Total Station &amp; Auto Level Instruments
                         </h3>
                         <p class="text-xs text-slate-400 leading-relaxed">
-                            High-precision optical total stations, digital auto level instruments, calibrated concrete cube testing compression machines, and slump test apparatus.
+                            High-precision optical total stations, digital auto level instruments, calibrated concrete
+                            cube testing compression machines, and slump test apparatus.
                         </p>
                         <div class="pt-4 border-t border-white/5 flex justify-between items-center text-xs">
-                            <span class="text-slate-400"><strong class="text-white">Count:</strong> 3 Auto Levels | 2 Theodolites</span>
-                            <span class="text-gold-400 font-semibold flex items-center gap-1">Calibrated <i class="fa-solid fa-circle-check text-[10px]"></i></span>
+                            <span class="text-slate-400"><strong class="text-white">Count:</strong> 3 Auto Levels | 2
+                                Theodolites</span>
+                            <span class="text-gold-400 font-semibold flex items-center gap-1">Calibrated <i
+                                    class="fa-solid fa-circle-check text-[10px]"></i></span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Machinery Card 5 -->
-                <div class="gallery-card glass-card rounded-xl overflow-hidden group border border-white/10" data-category="earthmovers">
+                <div class="gallery-card glass-card rounded-xl overflow-hidden group border border-white/10"
+                    data-category="earthmovers">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="heavy_hydra_crane.png" alt="Ace Hydra Mobile Cranes & Heavy Transport" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-4 right-4 bg-gold-400 text-obsidian text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
+                        <img src="heavy_hydra_crane.png" alt="Ace Hydra Mobile Cranes & Heavy Transport"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent">
+                        </div>
+                        <span
+                            class="absolute top-4 right-4 bg-gold-400 text-obsidian text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
                             HEAVY LIFT
                         </span>
-                        <span class="absolute bottom-4 left-4 bg-obsidian-950/80 backdrop-blur border border-white/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded">
+                        <span
+                            class="absolute bottom-4 left-4 bg-obsidian-950/80 backdrop-blur border border-white/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded">
                             <i class="fa-solid fa-truck-monster mr-1.5"></i> Earthmovers &amp; Fleet
                         </span>
                     </div>
                     <div class="p-6 space-y-4">
-                        <h3 class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
+                        <h3
+                            class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
                             ACE Hydra Mobile Cranes &amp; Transport
                         </h3>
                         <p class="text-xs text-slate-400 leading-relaxed">
-                            Heavy hydraulic pick-and-carry mobile cranes, commercial tractors, dump trailers, site water tankers, and portable site office containers for smooth logistics.
+                            Heavy hydraulic pick-and-carry mobile cranes, commercial tractors, dump trailers, site water
+                            tankers, and portable site office containers for smooth logistics.
                         </p>
                         <div class="pt-4 border-t border-white/5 flex justify-between items-center text-xs">
-                            <span class="text-slate-400"><strong class="text-white">Count:</strong> 1 Hydra Crane | 4 Tractors | 4 Tankers</span>
-                            <span class="text-gold-400 font-semibold flex items-center gap-1">Mobile <i class="fa-solid fa-circle-check text-[10px]"></i></span>
+                            <span class="text-slate-400"><strong class="text-white">Count:</strong> 1 Hydra Crane | 4
+                                Tractors | 4 Tankers</span>
+                            <span class="text-gold-400 font-semibold flex items-center gap-1">Mobile <i
+                                    class="fa-solid fa-circle-check text-[10px]"></i></span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Machinery Card 6 -->
-                <div class="gallery-card glass-card rounded-xl overflow-hidden group border border-white/10" data-category="fabrication">
+                <div class="gallery-card glass-card rounded-xl overflow-hidden group border border-white/10"
+                    data-category="fabrication">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="scaffolding_shuttering.png" alt="Cuplock Scaffolding & Shuttering Plates" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent"></div>
-                        <span class="absolute top-4 right-4 bg-gold-400 text-obsidian text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
+                        <img src="scaffolding_shuttering.png" alt="Cuplock Scaffolding & Shuttering Plates"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent">
+                        </div>
+                        <span
+                            class="absolute top-4 right-4 bg-gold-400 text-obsidian text-[10px] font-bold px-2.5 py-1 rounded tracking-wider uppercase">
                             20,000 SQ FT
                         </span>
-                        <span class="absolute bottom-4 left-4 bg-obsidian-950/80 backdrop-blur border border-white/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded">
+                        <span
+                            class="absolute bottom-4 left-4 bg-obsidian-950/80 backdrop-blur border border-white/10 text-gold-400 text-xs font-semibold px-3 py-1 rounded">
                             <i class="fa-solid fa-layer-group mr-1.5"></i> Formwork &amp; Infrastructure
                         </span>
                     </div>
                     <div class="p-6 space-y-4">
-                        <h3 class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
+                        <h3
+                            class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
                             Steel Shuttering Plates &amp; Scaffolding
                         </h3>
                         <p class="text-xs text-slate-400 leading-relaxed">
-                            Extensive stock of steel shuttering plates and modular cuplock scaffolding systems capable of supporting multi-story high-rise slab casting simultaneously.
+                            Extensive stock of steel shuttering plates and modular cuplock scaffolding systems capable
+                            of supporting multi-story high-rise slab casting simultaneously.
                         </p>
                         <div class="pt-4 border-t border-white/5 flex justify-between items-center text-xs">
-                            <span class="text-slate-400"><strong class="text-white">Capacity:</strong> 20,000 Sq. Ft. Coverage</span>
-                            <span class="text-gold-400 font-semibold flex items-center gap-1">Ready Staged <i class="fa-solid fa-circle-check text-[10px]"></i></span>
+                            <span class="text-slate-400"><strong class="text-white">Capacity:</strong> 20,000 Sq. Ft.
+                                Coverage</span>
+                            <span class="text-gold-400 font-semibold flex items-center gap-1">Ready Staged <i
+                                    class="fa-solid fa-circle-check text-[10px]"></i></span>
                         </div>
                     </div>
                 </div>
@@ -423,15 +485,19 @@
         <div class="max-w-7xl mx-auto px-6">
             <!-- Section Header -->
             <div class="text-center max-w-2xl mx-auto mb-12 space-y-4">
-                <span class="text-xs font-semibold tracking-[0.25em] text-gold-400 uppercase block">COMPLETE INVENTORY LIST</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">Full Equipment Breakdown &amp; Quantities</h2>
+                <span class="text-xs font-semibold tracking-[0.25em] text-gold-400 uppercase block">COMPLETE INVENTORY
+                    LIST</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">Full Equipment
+                    Breakdown &amp; Quantities</h2>
                 <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                    Detailed inventory of all tools, heavy machinery, testing apparatus, and structural support assets in Nest Developers &amp; Architects' internal fleet.
+                    Detailed inventory of all tools, heavy machinery, testing apparatus, and structural support assets
+                    in Nest Developers &amp; Architects' internal fleet.
                 </p>
 
                 <!-- Search Input for Inventory -->
                 <div class="pt-4 max-w-md mx-auto relative">
-                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                    <i
+                        class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
                     <input type="text" id="equipment-search" placeholder="Search equipment by name..."
                         class="w-full bg-white/5 border border-white/10 rounded-lg pl-11 pr-4 py-2.5 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-gold-400 transition-colors">
                 </div>
@@ -441,200 +507,282 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
                 <!-- Group 1: Earthmovers & Transport -->
-                <div class="inventory-group glass-card p-8 rounded-xl border border-white/10 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+                <div
+                    class="inventory-group glass-card p-8 rounded-xl border border-white/10 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
                     <div>
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 rounded-lg bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-xl">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-xl">
                                 <i class="fa-solid fa-truck-monster"></i>
                             </div>
                             <div>
-                                <h3 class="font-display text-lg font-bold text-white leading-tight">Earthmovers &amp; Heavy Fleet</h3>
-                                <span class="text-[10px] text-gold-400/80 uppercase tracking-wider font-semibold">9 Asset Categories</span>
+                                <h3 class="font-display text-lg font-bold text-white leading-tight">Earthmovers &amp;
+                                    Heavy Fleet</h3>
+                                <span class="text-[10px] text-gold-400/80 uppercase tracking-wider font-semibold">9
+                                    Asset Categories</span>
                             </div>
                         </div>
                         <ul class="space-y-3.5" id="group-earthmovers">
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">JCB Backhoe</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">JCB Excavator</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">1 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">1
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Motor Grader</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">1 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">1
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Soil Compactor Roller</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">1 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">1
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Ace Hydra Crane</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">1 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">1
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Tractor</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">4 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">4
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Trolley</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Water Tanker</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">4 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">4
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Office Container</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2
+                                    NOS.</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Group 2: Concrete, Mixers & Lifts -->
-                <div class="inventory-group glass-card p-8 rounded-xl border border-white/10 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+                <div
+                    class="inventory-group glass-card p-8 rounded-xl border border-white/10 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
                     <div>
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 rounded-lg bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-xl">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-xl">
                                 <i class="fa-solid fa-cubes"></i>
                             </div>
                             <div>
-                                <h3 class="font-display text-lg font-bold text-white leading-tight">Concrete &amp; Lifting Plants</h3>
-                                <span class="text-[10px] text-gold-400/80 uppercase tracking-wider font-semibold">9 Asset Categories</span>
+                                <h3 class="font-display text-lg font-bold text-white leading-tight">Concrete &amp;
+                                    Lifting Plants</h3>
+                                <span class="text-[10px] text-gold-400/80 uppercase tracking-wider font-semibold">9
+                                    Asset Categories</span>
                             </div>
                         </div>
                         <ul class="space-y-3.5" id="group-concrete">
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Batching Plant</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">1 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">1
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Mixture Machine</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">10 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">10
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Hoist Lift Machine</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Monkey Lift</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Plate Vibrator</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Nozzle Vibrator</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">12 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">12
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Slump Test Machine</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">3 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">3
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Cube Test Machine</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Cube Box</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">40 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">40
+                                    NOS.</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Group 3: Fabrication & Demolition -->
-                <div class="inventory-group glass-card p-8 rounded-xl border border-white/10 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+                <div
+                    class="inventory-group glass-card p-8 rounded-xl border border-white/10 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
                     <div>
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 rounded-lg bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-xl">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-xl">
                                 <i class="fa-solid fa-scissors"></i>
                             </div>
                             <div>
-                                <h3 class="font-display text-lg font-bold text-white leading-tight">Fabrication &amp; Cutting</h3>
-                                <span class="text-[10px] text-gold-400/80 uppercase tracking-wider font-semibold">9 Asset Categories</span>
+                                <h3 class="font-display text-lg font-bold text-white leading-tight">Fabrication &amp;
+                                    Cutting</h3>
+                                <span class="text-[10px] text-gold-400/80 uppercase tracking-wider font-semibold">9
+                                    Asset Categories</span>
                             </div>
                         </div>
                         <ul class="space-y-3.5" id="group-fabrication">
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Bar Cutting Machine</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Bar Bending Machine</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">3 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">3
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Chopsaw Cutting M/C</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">10 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">10
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Wood Cutter</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Demolition Hammer</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">10 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">10
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Grinder Machine</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">10 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">10
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Welding Machine</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Air Compressor</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Dewatering Pump</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">5
+                                    NOS.</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Group 4: Site Infrastructure & Survey -->
-                <div class="inventory-group glass-card p-8 rounded-xl border border-white/10 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+                <div
+                    class="inventory-group glass-card p-8 rounded-xl border border-white/10 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
                     <div>
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 rounded-lg bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-xl">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-gold-400/10 border border-gold-400/20 flex items-center justify-center text-gold-400 text-xl">
                                 <i class="fa-solid fa-helmet-safety"></i>
                             </div>
                             <div>
-                                <h3 class="font-display text-lg font-bold text-white leading-tight">Infrastructure &amp; Survey</h3>
-                                <span class="text-[10px] text-gold-400/80 uppercase tracking-wider font-semibold">6 Asset Categories</span>
+                                <h3 class="font-display text-lg font-bold text-white leading-tight">Infrastructure &amp;
+                                    Survey</h3>
+                                <span class="text-[10px] text-gold-400/80 uppercase tracking-wider font-semibold">6
+                                    Asset Categories</span>
                             </div>
                         </div>
                         <ul class="space-y-3.5" id="group-survey">
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Shuttering Plates</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">20000 SQ. FT.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">20000
+                                    SQ. FT.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Scaffolding System</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">20000 SQ. FT.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">20000
+                                    SQ. FT.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Auto Level Machine</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">3 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">3
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Theodolite Machine</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Generator Set</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">4 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">4
+                                    NOS.</span>
                             </li>
                             <li class="inventory-item flex justify-between items-center text-xs text-slate-300">
                                 <span class="item-name">Gamzone Unit</span>
-                                <span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2 NOS.</span>
+                                <span
+                                    class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] text-gold-400 font-semibold">2
+                                    NOS.</span>
                             </li>
                         </ul>
                     </div>
@@ -647,27 +795,32 @@
     <!-- Downloads & Corporate Publications -->
     <section class="py-20 bg-obsidian-950 border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="glass-card rounded-2xl p-8 sm:p-12 border border-gold-400/20 relative overflow-hidden bg-gradient-to-r from-obsidian-950 via-obsidian-900 to-obsidian-950">
+            <div
+                class="glass-card rounded-2xl p-8 sm:p-12 border border-gold-400/20 relative overflow-hidden bg-gradient-to-r from-obsidian-950 via-obsidian-900 to-obsidian-950">
                 <div class="grid md:grid-cols-12 gap-8 items-center">
-                    
+
                     <div class="md:col-span-8 space-y-4">
-                        <span class="text-xs font-semibold tracking-[0.2em] text-gold-400 uppercase flex items-center gap-2">
+                        <span
+                            class="text-xs font-semibold tracking-[0.2em] text-gold-400 uppercase flex items-center gap-2">
                             <i class="fa-solid fa-file-pdf"></i> CORPORATE DOCUMENTATION
                         </span>
                         <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">
                             Download Official NDA Catalogue &amp; Specs
                         </h2>
                         <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">
-                            Gain complete insight into Nest Developers &amp; Architects' corporate profile, past landmark industrial projects, architectural credentials, and machinery specifications.
+                            Gain complete insight into Nest Developers &amp; Architects' corporate profile, past
+                            landmark industrial projects, architectural credentials, and machinery specifications.
                         </p>
                     </div>
 
-                    <div class="md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-4 justify-end items-stretch md:items-end">
+                    <div
+                        class="md:col-span-4 flex flex-col sm:flex-row md:flex-col gap-4 justify-end items-stretch md:items-end">
                         <a href="NDA Catlogue.pdf" target="_blank" download
                             class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gold-400 text-obsidian font-bold text-xs tracking-widest uppercase rounded hover:bg-gold-550 transition-all shadow-lg shadow-gold-400/10">
                             <i class="fa-solid fa-download text-sm"></i> Download Catalogue (PDF)
                         </a>
-                        <span class="text-[11px] text-slate-400 text-center md:text-right">File size: ~40 MB | Official Brochure</span>
+                        <span class="text-[11px] text-slate-400 text-center md:text-right">File size: ~40 MB | Official
+                            Brochure</span>
                     </div>
 
                 </div>
@@ -683,7 +836,8 @@
                 Require Heavy Machinery &amp; Contracting Support?
             </h2>
             <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
-                Partner with Nest Developers &amp; Architects for high-speed civil execution, warehouse setup, or equipment deployment on your next structural endeavor.
+                Partner with Nest Developers &amp; Architects for high-speed civil execution, warehouse setup, or
+                equipment deployment on your next structural endeavor.
             </p>
             <div class="pt-4 flex flex-wrap justify-center gap-4">
                 <a href="contact.html"
@@ -706,17 +860,23 @@
                 <div class="flex items-center gap-3">
                     <img src="nda golden logo.png" alt="NDA Logo" class="h-10 w-auto object-contain">
                     <div class="flex flex-col">
-                        <span class="font-display font-bold text-white tracking-widest text-sm leading-none">NEST DEVELOPERS</span>
-                        <span class="font-display font-medium text-[8px] text-gold-400 tracking-[0.25em] mt-1">ARCHITECTS</span>
+                        <span class="font-display font-bold text-white tracking-widest text-sm leading-none">NEST
+                            DEVELOPERS</span>
+                        <span
+                            class="font-display font-medium text-[8px] text-gold-400 tracking-[0.25em] mt-1">ARCHITECTS</span>
                     </div>
                 </div>
                 <p class="leading-relaxed max-w-sm text-slate-400 text-xs">
-                    Since 2015, translating complex structures into landmarks across India. Registered in Faridabad, built on reliability, advanced machinery, and safety.
+                    Since 2015, translating complex structures into landmarks across India. Registered in Faridabad,
+                    built on reliability, advanced machinery, and safety.
                 </p>
                 <div class="flex gap-4 text-base">
-                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition-colors" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
 
@@ -728,7 +888,8 @@
                     <li><a href="about.html" class="hover:text-gold-400 transition-colors">About Us</a></li>
                     <li><a href="services.html" class="hover:text-gold-400 transition-colors">Core Services</a></li>
                     <li><a href="projects.html" class="hover:text-gold-400 transition-colors">Portfolio</a></li>
-                    <li><a href="resources.html" class="hover:text-gold-400 transition-colors">Resources &amp; Machinery</a></li>
+                    <li><a href="resources.html" class="hover:text-gold-400 transition-colors">Resources &amp;
+                            Machinery</a></li>
                     <li><a href="contact.html" class="hover:text-gold-400 transition-colors">Contact Panel</a></li>
                 </ul>
             </div>
@@ -746,7 +907,8 @@
         </div>
 
         <!-- Rights -->
-        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/[0.05] flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500">
+        <div
+            class="max-w-7xl mx-auto px-6 pt-8 border-t border-white/[0.05] flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500">
             <span>&copy; 2026 Nest Developers &amp; Architects. All Rights Reserved.</span>
             <div class="flex gap-6">
                 <a href="#" class="hover:text-gold-400 transition-colors">Privacy Policy</a>
