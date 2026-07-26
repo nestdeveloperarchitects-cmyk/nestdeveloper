@@ -195,7 +195,8 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24 text-center">
-            <span class="text-xs font-semibold tracking-[0.3em] text-gold-400 uppercase block mb-4">CORPORATE ASSETS</span>
+            <span class="text-xs font-semibold tracking-[0.3em] text-gold-400 uppercase block mb-4">CORPORATE
+                ASSETS</span>
             <h1
                 class="font-display text-3xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-none">
                 Our Resources</h1>
@@ -205,7 +206,8 @@
             </p>
 
             <!-- Stats Bar -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mt-10 pt-8 border-t border-white/10 max-w-4xl mx-auto text-center">
+            <div
+                class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mt-10 pt-8 border-t border-white/10 max-w-4xl mx-auto text-center">
                 <div class="space-y-1">
                     <span class="font-display text-2xl sm:text-3xl font-bold text-gold-400">40+ UNITS</span>
                     <p class="text-[11px] text-slate-400 tracking-wider uppercase">Heavy Equipment Fleet</p>
@@ -235,7 +237,8 @@
                 <div>
                     <span class="text-xs font-semibold tracking-[0.25em] text-gold-400 uppercase block mb-2">EQUIPMENT
                         SPOTLIGHT</span>
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">Featured Machinery, Manpower
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">Featured
+                        Machinery, Manpower
                         &amp; Equipment</h2>
                 </div>
 
@@ -320,10 +323,12 @@
                             Man Power, Strength &amp; Work
                         </h3>
                         <p class="text-xs text-slate-400 leading-relaxed">
-                            Dedicated Construction Workforce, Advanced Site Management, Skilled Operators, and Quality Control Teams Driving Precision, Safety, and Timely Delivery.
+                            Dedicated Construction Workforce, Advanced Site Management, Skilled Operators, and Quality
+                            Control Teams Driving Precision, Safety, and Timely Delivery.
                         </p>
                         <div class="pt-4 border-t border-white/5 flex justify-between items-center text-xs">
-                            <span class="text-slate-400"><strong class="text-white">Count:</strong> 40 Labour | 20 Professionals
+                            <span class="text-slate-400"><strong class="text-white">Count:</strong> 40 Labour | 20
+                                Professionals
                             </span>
                             <span class="text-gold-400 font-semibold flex items-center gap-1">Operated <i
                                     class="fa-solid fa-circle-check text-[10px]"></i></span>
@@ -351,7 +356,7 @@
                     <div class="p-6 space-y-4">
                         <h3
                             class="font-display text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
-                           Earth Movers &amp; Machinery
+                            Earth Movers &amp; Machinery
                         </h3>
                         <p class="text-xs text-slate-400 leading-relaxed">
                             Industrial hydraulic Crane, Roller, and
@@ -359,7 +364,7 @@
                         </p>
                         <div class="pt-4 border-t border-white/5 flex justify-between items-center text-xs">
                             <span class="text-slate-400"><strong class="text-white">Count:</strong> 1 Roller
-                            | 2 JCB</span>
+                                | 2 JCB</span>
                             <span class="text-gold-400 font-semibold flex items-center gap-1">Heavy Duty <i
                                     class="fa-solid fa-circle-check text-[10px]"></i></span>
                         </div>
@@ -471,6 +476,91 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- All Resources On-Site Photo Gallery & Slider Section (Added after Machinery Spotlight) -->
+    <section class="py-20 bg-obsidian-950 border-t border-white/5 relative" id="resources-gallery-section">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <span class="text-xs font-semibold tracking-[0.25em] text-gold-400 uppercase block">COMPLETE ASSET
+                    GALLERY</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight">Resource Fleet &amp;
+                    Site Photo Gallery</h2>
+                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+                    Explore all 22 heavy machinery assets, mobile cranes, excavators, batching plants, steel fabrication
+                    tools, and civil engineering teams with interactive Next &amp; Previous controls.
+                </p>
+            </div>
+
+            <!-- Interactive Featured Slider Showcase with Next / Previous Controls -->
+            <div
+                class="glass-card rounded-2xl overflow-hidden border border-white/10 p-4 sm:p-6 relative bg-gradient-to-b from-white/[0.03] to-transparent shadow-2xl">
+                <div
+                    class="relative h-[320px] sm:h-[450px] md:h-[520px] w-full rounded-xl overflow-hidden bg-obsidian-950 group">
+
+                    <!-- Main Slide Image -->
+                    <img id="res-slider-main-img" src="crane hydra.jpeg" alt="Resource Equipment Preview"
+                        class="w-full h-full object-cover transition-all duration-500 cursor-pointer"
+                        onclick="openResLightbox(currentResSlideIndex)">
+
+                    <!-- Gradient Overlay -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent pointer-events-none">
+                    </div>
+
+                    <!-- Slide Badge & Counter -->
+                    <div class="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-3">
+                        <span id="res-slider-badge"
+                            class="bg-gold-400 text-obsidian text-[10px] sm:text-xs font-bold px-3 py-1 rounded tracking-wider uppercase shadow-lg">MOBILE
+                            CRANE</span>
+                        <span id="res-slider-counter"
+                            class="bg-obsidian-950/80 backdrop-blur border border-white/10 text-slate-300 text-xs px-3 py-1 rounded font-mono">1
+                            / 22</span>
+                    </div>
+
+                    <!-- Previous Button (<) -->
+                    <button onclick="prevResSlide()"
+                        class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-obsidian-950/80 border border-white/10 text-white hover:text-gold-400 hover:border-gold-400 hover:bg-obsidian-900 flex items-center justify-center transition-all shadow-xl z-10"
+                        aria-label="Previous Slide">
+                        <i class="fa-solid fa-chevron-left text-lg"></i>
+                    </button>
+
+                    <!-- Next Button (>) -->
+                    <button onclick="nextResSlide()"
+                        class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-obsidian-950/80 border border-white/10 text-white hover:text-gold-400 hover:border-gold-400 hover:bg-obsidian-900 flex items-center justify-center transition-all shadow-xl z-10"
+                        aria-label="Next Slide">
+                        <i class="fa-solid fa-chevron-right text-lg"></i>
+                    </button>
+
+                    <!-- Bottom Caption Bar -->
+                    <div
+                        class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3 z-10 pointer-events-none">
+                        <div>
+                            <span id="res-slider-category"
+                                class="text-[10px] font-semibold text-gold-400 uppercase tracking-widest block mb-1">CRANES
+                                &amp; LIFTING</span>
+                            <h3 id="res-slider-title"
+                                class="font-display text-xl sm:text-2xl font-bold text-white leading-tight">ACE 14XW
+                                Mobile Hydra Crane</h3>
+                            <p id="res-slider-desc" class="text-xs text-slate-300 max-w-xl line-clamp-2 mt-1">ACE 14XW
+                                heavy hydraulic pick-and-carry mobile crane performing site rigging and structural
+                                hoisting operations.</p>
+                        </div>
+                        <button onclick="openResLightbox(currentResSlideIndex)"
+                            class="pointer-events-auto shrink-0 inline-flex items-center gap-2 px-4 py-2.5 bg-gold-400 text-obsidian font-bold text-xs rounded hover:bg-gold-550 transition-all shadow-lg">
+                            <i class="fa-solid fa-expand"></i> Full Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Thumbnail Navigation Strip (22 Thumbnails) -->
+                <div class="mt-4 flex gap-3 overflow-x-auto pb-2 scrollbar-thin" id="res-slider-thumbnails">
+                    <!-- Dynamic Thumbnails inserted via JavaScript -->
+                </div>
             </div>
         </div>
     </section>
@@ -916,6 +1006,67 @@
         </div>
     </footer>
 
+    <!-- Fullscreen Resource Photo Lightbox Modal (With Next & Previous Controls) -->
+    <div id="res-lightbox"
+        class="fixed inset-0 z-[100] hidden bg-obsidian-950/95 backdrop-blur-xl flex flex-col justify-between p-4 sm:p-8 transition-all duration-300">
+        <!-- Top Controls Header -->
+        <div class="flex justify-between items-center z-10 max-w-7xl w-full mx-auto">
+            <div class="flex items-center gap-3">
+                <span id="res-lightbox-badge"
+                    class="bg-gold-400 text-obsidian text-[10px] font-bold px-3 py-1 rounded tracking-wider uppercase">MOBILE
+                    CRANE</span>
+                <span id="res-lightbox-counter" class="text-xs text-slate-400 font-mono">1 / 22</span>
+            </div>
+            <button onclick="closeResLightbox()"
+                class="w-10 h-10 rounded-full bg-white/10 hover:bg-gold-400 hover:text-obsidian text-white flex items-center justify-center transition-all">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Center Image Stage with Next & Previous Nav -->
+        <div class="relative flex-1 flex items-center justify-center my-4 max-w-6xl mx-auto w-full overflow-hidden">
+            <!-- Left Prev Button -->
+            <button onclick="prevResLightbox()"
+                class="absolute left-2 sm:left-4 z-20 w-12 h-12 rounded-full bg-obsidian-900/90 border border-white/10 hover:border-gold-400 text-white hover:text-gold-400 flex items-center justify-center transition-all shadow-2xl">
+                <i class="fa-solid fa-chevron-left text-lg"></i>
+            </button>
+
+            <!-- Main Enlarged Image -->
+            <img id="res-lightbox-img" src="" alt="Resource Photo Lightbox"
+                class="max-h-[72vh] max-w-full object-contain rounded-xl shadow-2xl transition-all duration-300 transform scale-100">
+
+            <!-- Right Next Button -->
+            <button onclick="nextResLightbox()"
+                class="absolute right-2 sm:right-4 z-20 w-12 h-12 rounded-full bg-obsidian-900/90 border border-white/10 hover:border-gold-400 text-white hover:text-gold-400 flex items-center justify-center transition-all shadow-2xl">
+                <i class="fa-solid fa-chevron-right text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Bottom Details Panel -->
+        <div
+            class="z-10 max-w-4xl w-full mx-auto bg-obsidian-900/90 border border-white/10 p-5 rounded-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 backdrop-blur-md">
+            <div class="space-y-1">
+                <span id="res-lightbox-category"
+                    class="text-[10px] font-semibold text-gold-400 uppercase tracking-widest block">CRANES &amp;
+                    LIFTING</span>
+                <h4 id="res-lightbox-title" class="font-display text-xl font-bold text-white">ACE 14XW Mobile Hydra
+                    Crane</h4>
+                <p id="res-lightbox-desc" class="text-xs text-slate-400 max-w-xl">ACE 14XW heavy hydraulic
+                    pick-and-carry mobile crane performing site rigging operations.</p>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+                <button onclick="prevResLightbox()"
+                    class="px-4 py-2 bg-white/10 hover:bg-gold-400 hover:text-obsidian text-white font-bold text-xs rounded transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-chevron-left"></i> Previous
+                </button>
+                <button onclick="nextResLightbox()"
+                    class="px-4 py-2 bg-gold-400 hover:bg-gold-550 text-obsidian font-bold text-xs rounded transition-all flex items-center gap-1.5">
+                    Next <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Interactive Script Operations -->
     <script>
         // Header Scroll Effect
@@ -936,26 +1087,30 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        });
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        }
 
         const closeMenu = () => {
-            mobileMenu.classList.add('hidden');
+            if (mobileMenu) mobileMenu.classList.add('hidden');
             document.body.style.overflow = '';
         };
 
-        mobileClose.addEventListener('click', closeMenu);
+        if (mobileClose) mobileClose.addEventListener('click', closeMenu);
         mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 
-        // Category Gallery Filter
+        // Category Gallery Filter for Machinery Spotlight
         function filterGallery(category) {
             const tabs = document.querySelectorAll('.filter-tab');
             tabs.forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('active');
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
 
-            const cards = document.querySelectorAll('.gallery-card');
+            const cards = document.querySelectorAll('#machinery-gallery .gallery-card');
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-category') === category) {
                     card.style.display = 'block';
@@ -981,6 +1136,151 @@
                     }
                 });
             });
+        }
+
+        // Complete 22-Resource Images Data Array
+        const allResourcesGalleryData = [
+            { src: 'crane hydra.jpeg', title: 'ACE 14XW Mobile Hydra Crane', category: 'Cranes & Lifting', badge: 'MOBILE CRANE', catFilter: 'cranes', desc: 'ACE 14XW heavy hydraulic pick-and-carry mobile crane performing site rigging and structural hoisting operations.' },
+            { src: 'man power.jpeg', title: 'Concrete Batch Mixing & Site Crew', category: 'Workforce & Casting', badge: 'SITE CASTING', catFilter: 'workforce', desc: 'On-site concrete mixing operations with skilled civil construction team and tractor transport.' },
+            { src: 'jcb.jpeg', title: 'JCB 3DX Backhoe Loader Fleet', category: 'Earthmovers & Fleet', badge: 'JCB FLEET', catFilter: 'earthmovers', desc: 'Dual JCB 3DX backhoe loaders staged for site levelling, excavation, and heavy material handling.' },
+            { src: 'jcb2.jpeg', title: 'Dual JCB Excavation Loaders', category: 'Earthmovers & Fleet', badge: 'EARTHMOVERS', catFilter: 'earthmovers', desc: 'Heavy-duty backhoe loaders operating on foundation preparation and subgrade excavation.' },
+            { src: 'jcb jaws.jpeg', title: 'Heavy Tracked JCB Excavator', category: 'Earthmovers & Fleet', badge: 'TRACKED EXCAVATOR', catFilter: 'earthmovers', desc: 'Tracked hydraulic excavator unit equipped for deep trenching, soil digging, and earthworks.' },
+
+            { src: 'roller.jpeg', title: 'Vibratory Soil Compactor Roller', category: 'Earthmovers & Fleet', badge: 'COMPACTION', catFilter: 'earthmovers', desc: 'Heavy vibratory road roller for soil consolidation, base course compaction, and road prep.' },
+            { src: 'tractors.jpeg', title: 'Commercial Haulage Tractors', category: 'Earthmovers & Fleet', badge: 'LOGISTICS', catFilter: 'earthmovers', desc: 'Commercial tractor fleet and trailers for aggregate haulage, debris disposal, and site transport.' },
+
+
+
+            { src: 'mixer.jpeg', title: 'Industrial Diesel Concrete Mixer', category: 'Concrete & Mixing', badge: 'CONCRETE MIXER', catFilter: 'concrete', desc: 'Heavy diesel concrete mixer unit delivering uniform aggregate blending on casting sites.' },
+
+            { src: 'manpower.jpeg', title: 'Engineering & Technical Supervisors', category: 'Workforce & Team', badge: 'EXPERT CREW', catFilter: 'workforce', desc: 'Certified civil engineers and supervisors overseeing quality assurance and structural integrity.' },
+            { src: 'man power 2.jpeg', title: 'Civil Execution & Safety Crew', category: 'Workforce & Team', badge: 'SAFETY CREW', catFilter: 'workforce', desc: 'Trained site safety officers and execution crew enforcing zero-accident safety protocols.' },
+            { src: 'team.jpeg', title: 'Project Management Leadership', category: 'Workforce & Team', badge: 'LEADERSHIP', catFilter: 'workforce', desc: 'Senior civil engineering directors and project managers guiding site operations since 2015.' },
+
+
+        ];
+
+        let currentResSlideIndex = 0;
+        let activeResFilter = 'all';
+
+        function updateResSlide(index) {
+            currentResSlideIndex = index;
+            const item = allResourcesGalleryData[currentResSlideIndex];
+            if (!item) return;
+
+            const mainImg = document.getElementById('res-slider-main-img');
+            if (mainImg) mainImg.src = item.src;
+            const badge = document.getElementById('res-slider-badge');
+            if (badge) badge.textContent = item.badge;
+            const counter = document.getElementById('res-slider-counter');
+            if (counter) counter.textContent = `${currentResSlideIndex + 1} / ${allResourcesGalleryData.length}`;
+            const cat = document.getElementById('res-slider-category');
+            if (cat) cat.textContent = item.category;
+            const title = document.getElementById('res-slider-title');
+            if (title) title.textContent = item.title;
+            const desc = document.getElementById('res-slider-desc');
+            if (desc) desc.textContent = item.desc;
+
+            // Highlight Active Thumbnail
+            const thumbs = document.querySelectorAll('.res-thumb-btn');
+            thumbs.forEach((t, i) => {
+                if (i === currentResSlideIndex) {
+                    t.classList.add('border-gold-400', 'ring-2', 'ring-gold-400/50', 'scale-105');
+                    t.classList.remove('border-white/10', 'opacity-60');
+                    t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                } else {
+                    t.classList.remove('border-gold-400', 'ring-2', 'ring-gold-400/50', 'scale-105');
+                    t.classList.add('border-white/10', 'opacity-60');
+                }
+            });
+        }
+
+        function nextResSlide() {
+            currentResSlideIndex = (currentResSlideIndex + 1) % allResourcesGalleryData.length;
+            updateResSlide(currentResSlideIndex);
+        }
+
+        function prevResSlide() {
+            currentResSlideIndex = (currentResSlideIndex - 1 + allResourcesGalleryData.length) % allResourcesGalleryData.length;
+            updateResSlide(currentResSlideIndex);
+        }
+
+        // Initialize Thumbnails & Gallery Slider on Load
+        function initResourcesGallery() {
+            const thumbContainer = document.getElementById('res-slider-thumbnails');
+            if (thumbContainer) {
+                thumbContainer.innerHTML = allResourcesGalleryData.map((item, idx) => `
+                    <button onclick="updateResSlide(${idx})" class="res-thumb-btn shrink-0 w-24 h-16 sm:w-28 sm:h-20 rounded-lg overflow-hidden border transition-all duration-300 cursor-pointer ${idx === 0 ? 'border-gold-400 ring-2 ring-gold-400/50 scale-105' : 'border-white/10 opacity-60 hover:opacity-100'}">
+                        <img src="${item.src}" alt="${item.title}" class="w-full h-full object-cover">
+                    </button>
+                `).join('');
+            }
+
+            updateResSlide(0);
+        }
+
+        // Lightbox Functions
+        let resLightboxIndex = 0;
+
+        function openResLightbox(idx) {
+            resLightboxIndex = idx;
+            updateResLightbox();
+            const lightbox = document.getElementById('res-lightbox');
+            if (lightbox) {
+                lightbox.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeResLightbox() {
+            const lightbox = document.getElementById('res-lightbox');
+            if (lightbox) {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function nextResLightbox() {
+            resLightboxIndex = (resLightboxIndex + 1) % allResourcesGalleryData.length;
+            updateResLightbox();
+        }
+
+        function prevResLightbox() {
+            resLightboxIndex = (resLightboxIndex - 1 + allResourcesGalleryData.length) % allResourcesGalleryData.length;
+            updateResLightbox();
+        }
+
+        function updateResLightbox() {
+            const item = allResourcesGalleryData[resLightboxIndex];
+            if (!item) return;
+
+            const img = document.getElementById('res-lightbox-img');
+            if (img) img.src = item.src;
+            const badge = document.getElementById('res-lightbox-badge');
+            if (badge) badge.textContent = item.badge;
+            const counter = document.getElementById('res-lightbox-counter');
+            if (counter) counter.textContent = `${resLightboxIndex + 1} / ${allResourcesGalleryData.length}`;
+            const cat = document.getElementById('res-lightbox-category');
+            if (cat) cat.textContent = item.category;
+            const title = document.getElementById('res-lightbox-title');
+            if (title) title.textContent = item.title;
+            const desc = document.getElementById('res-lightbox-desc');
+            if (desc) desc.textContent = item.desc;
+        }
+
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('res-lightbox');
+            if (lightbox && !lightbox.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeResLightbox();
+                if (e.key === 'ArrowLeft') prevResLightbox();
+                if (e.key === 'ArrowRight') nextResLightbox();
+            }
+        });
+
+        // Initialize on DOM Load
+        document.addEventListener('DOMContentLoaded', initResourcesGallery);
+        if (document.readyState === 'interactive' || document.readyState === 'complete') {
+            initResourcesGallery();
         }
     </script>
 </body>
