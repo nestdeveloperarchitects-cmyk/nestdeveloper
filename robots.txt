@@ -3,4 +3,5 @@ User-agent: *
 Allow: /
 
 # Sitemap Location for Google Search Console & Search Engines
-Sitemap: https://nestdevelopers.in/sitemap.xml
+Sitemap: https://nestdeveloper.in/sitemap.xml
+
